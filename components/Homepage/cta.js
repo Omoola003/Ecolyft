@@ -1,57 +1,55 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
 
-export default function BlogCTA() {
+export default function CTASection() {
   return (
-    <section className="relative bg-white mt-10">
-      {/* CTA Card */}
-      <div className="max-w-7xl mx-auto px-6 md:px-0">
-        <motion.div
+    <section className="relative bg-gradient-to-r from-green-700 to-green-500 py-20 sm:py-28">
+      <div className="max-w-5xl mx-auto px-6 text-center text-white">
+        {/* Heading */}
+        <motion.h2
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="bg-[#F8EEE6] rounded-2xl p-6 md:p-12 shadow-xl flex flex-col md:flex-row items-center md:items-stretch -mt-90 relative z-10 gap-10 h-[450px]"
+          viewport={{ once: true }}
+          className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4"
         >
-          {/* Left Column - Email Form */}
-          <div className="flex-1 flex flex-col justify-center gap-4">
-            <p className="text-xl md:text-5xl font-semibold text-gray-800 mb-4">
-              Join us today by dropping your email
-            </p>
-            <form className="flex w-full max-w-md bg-white rounded-full overflow-hidden shadow-sm">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="flex-1 px-4 py-3 focus:outline-none"
-              />
-              <button
-                type="submit"
-                className="px-6 py-3 bg-[#2E8B57] text-white font-semibold hover:bg-[#276847] transition-colors"
-              >
-                Subscribe
-              </button>
-            </form>
-            <p className="text-gray-600 mt-2 text-sm md:text-base">
-              We’ll send you updates and tips on keeping your environment clean
-            </p>
-          </div>
+          Build the Future. Live Sustainably.
+        </motion.h2>
 
-          {/* Right Column - Image */}
-          <div className="flex-1 relative w-full h-full">
-            <Image
-              src="/images/OBJECTS.png"
-              alt="CTA Image"
-              fill
-              className="object-contain rounded-xl"
-            />
-          </div>
+        {/* Subtitle */}
+        <motion.p
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          viewport={{ once: true }}
+          className="text-lg sm:text-xl mb-10 max-w-2xl mx-auto"
+        >
+          Join the circular economy revolution. Every action counts, every partnership matters.
+        </motion.p>
+
+        {/* Buttons */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          viewport={{ once: true }}
+          className="flex flex-col sm:flex-row justify-center gap-4"
+        >
+          <a
+            href="/request-pickup"
+            className="bg-white text-green-700 font-semibold px-6 py-3 rounded-lg shadow-md hover:bg-gray-100 transition-all duration-300"
+          >
+            Request a Pickup
+          </a>
+          <a
+            href="/partner"
+            className="border-2 border-white text-white font-semibold px-6 py-3 rounded-lg hover:bg-white hover:text-green-700 transition-all duration-300"
+          >
+            Partner With Us
+          </a>
         </motion.div>
       </div>
-
-      {/* Slight bottom padding to accommodate footer */}
-      <div className="h-20 md:h-24"></div>
     </section>
   );
 }

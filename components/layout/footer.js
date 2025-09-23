@@ -2,28 +2,28 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { Linkedin, Twitter, Facebook } from "lucide-react";
+import { Linkedin, Twitter, Facebook, Instagram } from "lucide-react";
 import { motion } from "framer-motion";
 
 const socialLinks = [
   { href: "#", label: "LinkedIn", icon: <Linkedin size={20} /> },
   { href: "#", label: "Twitter", icon: <Twitter size={20} /> },
   { href: "#", label: "Facebook", icon: <Facebook size={20} /> },
+  { href: "#", label: "Instagram", icon: <Instagram size={20} /> },
 ];
 
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About Us" },
-  { href: "/services", label: "Services" },
-  { href: "/impact", label: "Impact" },
-  { href: "/partners", label: "Partners" },
+  { href: "/services", label: "Products & Services" },
+  { href: "/contact", label: "Contact" },
 ];
 
-const companyLinks = [
-  { href: "/careers", label: "Careers" },
-  { href: "/blog", label: "Blog" },
-  { href: "/privacy-policy", label: "Privacy Policy" },
-  { href: "/terms", label: "Terms & Conditions" },
+const ServicesLinks = [
+  { href: "#", label: "Pickup (Trash2Cash" },
+  { href: "#", label: "Flakes" },
+  { href: "#", label: "Pellets" },
+  { href: "#", label: "Sustainable Solutions" },
 ];
 
 const hoverFocusClasses =
@@ -41,7 +41,7 @@ const columnVariants = {
 
 export default function Footer() {
   return (
-    <footer className="bg-[#2E8B57] text-white">
+    <footer className="bg-white text-black/90">
       {/* Top Section */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
         
@@ -56,17 +56,16 @@ export default function Footer() {
         >
           <div className="flex items-center gap-2">
             <Image
-              src="/logo.png"
+              src="/images/logo.png"
               alt="EcoLyft Logo"
-              width={40}
+              width={150}
               height={40}
               className="object-contain"
             />
-            <span className="text-xl font-bold tracking-wide">EcoLyft</span>
           </div>
-          <p className="mt-4 text-sm leading-relaxed text-white/90">
-            EcoLyft Cycler Technology transforms waste into opportunity,
-            powering circular economies and sustainable growth across Nigeria.
+          <p className="mt-4 text-sm leading-relaxed text-black/80">
+            <span className="font-black text-green-600">EcoLyft</span> — Growth From Waste. Transforming PET & HDPE waste into cash for 
+            households and high-quality recycled materials for industry.
           </p>
           <div className="flex gap-4 mt-6">
             {socialLinks.map((social) => (
@@ -90,7 +89,7 @@ export default function Footer() {
           viewport={{ once: true }}
           variants={columnVariants}
         >
-          <h4 className="font-semibold mb-4">Navigation</h4>
+          <h4 className="font-semibold mb-4">Quick Links</h4>
           <ul className="space-y-2 text-sm">
             {navLinks.map((link) => (
               <li key={link.label}>
@@ -110,9 +109,9 @@ export default function Footer() {
           viewport={{ once: true }}
           variants={columnVariants}
         >
-          <h4 className="font-semibold mb-4">Company</h4>
+          <h4 className="font-semibold mb-4">Services</h4>
           <ul className="space-y-2 text-sm">
-            {companyLinks.map((link) => (
+            {ServicesLinks.map((link) => (
               <li key={link.label}>
                 <Link href={link.href} className={hoverFocusClasses}>
                   {link.label}
@@ -131,7 +130,7 @@ export default function Footer() {
           variants={columnVariants}
         >
           <h4 className="font-semibold mb-4">Contact Us</h4>
-          <ul className="space-y-2 text-sm text-white/90">
+          <ul className="space-y-2 text-sm text-black/90">
             <li>
               Email:{" "}
               <a
@@ -156,8 +155,16 @@ export default function Footer() {
       </div>
 
       {/* Bottom Section */}
-      <div className="border-t border-white/20 py-4 text-center text-xs sm:text-sm text-white/80">
-        © {new Date().getFullYear()} EcoLyft Cycler Technology. All rights reserved.
+      <div className="border-t border-black/20 py-4 text-center text-xs sm:text-sm text-black/80">
+        © {new Date().getFullYear()} EcoLyft Cycler Technology. All rights reserved. Developed by{" "}
+        <a
+          href="https://omoolaex.com.ng"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline hover:text-green-600"
+        >
+          OmoolaEx
+        </a>
       </div>
     </footer>
   );
