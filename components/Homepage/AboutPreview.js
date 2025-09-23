@@ -72,7 +72,7 @@ export default function AboutPreview() {
 
             {/* Quote Box */}
             <blockquote className="border-l-4 border-green-600 pl-4 italic text-gray-800 my-4">
-              "Every kilogram is logged, every transaction transparent, every partnership accountable."
+              &quot;Every kilogram is logged, every transaction transparent, every partnership accountable.&quot;
             </blockquote>
 
             {/* CTA Button */}
