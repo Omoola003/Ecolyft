@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Menu, X } from "lucide-react";
+import { usePathname } from "next/navigation";
 
 // Menu items
 const NAV_ITEMS = [
@@ -14,85 +15,63 @@ const NAV_ITEMS = [
 ];
 
 export default function Header() {
-  const [activeMenu, setActiveMenu] = useState("Home");
+  const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
-  const [showSticky, setShowSticky] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrolled = window.scrollY > 50;
-      setIsScrolled(scrolled);
-
-      if (scrolled) {
-        // Delay sticky header appearance by 200ms
-        setTimeout(() => setShowSticky(true), 200);
-      } else {
-        setShowSticky(false);
-      }
+      setIsScrolled(window.scrollY > 50);
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
-  <header 
-    className={`fixed top-0 w-full z-50 bg-white shadow-md py-3 transition-transform duration-500 ${
-    isScrolled ? "translate-y-0" : "-translate-y-2"
-  }`}
-  >
-    <div className="max-w-7xl mx-auto flex items-center justify-between px-8">
+    <header
+      className={`fixed top-0 w-full z-50 bg-white transition-all duration-300 ${
+        isScrolled ? "shadow-md py-3" : "py-4"
+      }`}
+    >
+      <div className="max-w-7xl mx-auto flex items-center justify-between px-6 lg:px-8">
         {/* Logo */}
-        <div className="flex-shrink-0">
-          <Link href="/">
-            <Image
-              src="/images/logo.png"
-              alt="Ecolyft Logo"
-              width={120}
-              height={40}
-              className="object-contain"
-            />
-          </Link>
-        </div>
+        <Link href="/" className="flex-shrink-0">
+          <Image
+            src="/images/logo.png"
+            alt="Ecolyft Logo"
+            width={120}
+            height={40}
+            className="object-contain"
+          />
+        </Link>
 
         {/* Desktop Nav Menu */}
-        <nav className="hidden md:flex space-x-10">
-          {NAV_ITEMS.map((item, index) => {
-            const isActive = activeMenu === item.name;
+        <nav className="hidden md:flex space-x-8">
+          {NAV_ITEMS.map((item) => {
+            const isActive = pathname === item.href;
             return (
-              <Link key={item.name} href={item.href}>
-                <button
-                  onClick={() => setActiveMenu(item.name)}
-                  className={`transition-all duration-300 transform ${
-                    isActive
-                      ? "text-green-700 font-semibold scale-105"
-                      : "text-gray-700 hover:text-green-400"
-                  }`}
-                  style={{
-                    animation: `fadeSlideIn 0.5s ease forwards`,
-                    animationDelay: `${index * 0.1}s`,
-                  }}
-                >
-                  {item.name}
-                </button>
+              <Link
+                key={item.name}
+                href={item.href}
+                className={`transition-colors duration-300 ${
+                  isActive
+                    ? "text-green-700 font-semibold"
+                    : "text-gray-700 hover:text-green-500"
+                }`}
+              >
+                {item.name}
               </Link>
             );
           })}
         </nav>
 
-        {/* Accent Button */}
-        <div
-          className="hidden md:block"
-          style={{
-            animation: `fadeSlideIn 0.5s ease forwards`,
-            animationDelay: `${NAV_ITEMS.length * 0.1}s`,
-          }}
-        >
-          <Link href="/request-pickup">
-            <button className="bg-green-600 text-white px-6 py-2 rounded-lg transition-all duration-300 hover:bg-green-400 hover:scale-105">
-              Request Pickup
-            </button>
+        {/* Desktop Button */}
+        <div className="hidden md:block">
+          <Link
+            href="/request-pickup"
+            className="bg-green-600 text-white px-6 py-2 rounded-lg transition-all duration-300 hover:bg-green-500"
+          >
+            Request Pickup
           </Link>
         </div>
 
@@ -107,53 +86,34 @@ export default function Header() {
       </div>
 
       {/* Mobile Menu */}
-      <div
-        className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
-          mobileOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
-        }`}
-      >
-        <nav className="flex flex-col gap-4 p-8 bg-white">
+      {mobileOpen && (
+        <nav className="md:hidden flex flex-col gap-4 p-6 bg-white shadow-lg">
           {NAV_ITEMS.map((item) => {
-            const isActive = activeMenu === item.name;
+            const isActive = pathname === item.href;
             return (
-              <Link key={item.name} href={item.href}>
-                <button
-                  onClick={() => {
-                    setActiveMenu(item.name);
-                    setMobileOpen(false);
-                  }}
-                  className={`transition-all duration-300 ${
-                    isActive
-                      ? "text-green-700 font-semibold scale-105"
-                      : "text-gray-700 hover:text-green-400"
-                  }`}
-                >
-                  {item.name}
-                </button>
+              <Link
+                key={item.name}
+                href={item.href}
+                onClick={() => setMobileOpen(false)}
+                className={`transition-colors duration-300 ${
+                  isActive
+                    ? "text-green-700 font-semibold"
+                    : "text-gray-700 hover:text-green-500"
+                }`}
+              >
+                {item.name}
               </Link>
             );
           })}
-          <Link href="/request-pickup">
-            <button className="bg-green-600 text-white px-6 py-2 rounded-lg transition-all duration-300 hover:bg-green-400 hover:scale-105 text-center w-full">
-              Request Pickup
-            </button>
+          <Link
+            href="/request-pickup"
+            onClick={() => setMobileOpen(false)}
+            className="bg-green-600 text-white px-6 py-2 rounded-lg transition-all duration-300 hover:bg-green-500 text-center"
+          >
+            Request Pickup
           </Link>
         </nav>
-      </div>
-
-      {/* Tailwind Custom Keyframes */}
-      <style jsx>{`
-        @keyframes fadeSlideIn {
-          0% {
-            opacity: 0;
-            transform: translateY(-10px);
-          }
-          100% {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-      `}</style>
+      )}
     </header>
   );
 }
