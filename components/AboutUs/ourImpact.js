@@ -5,10 +5,10 @@ import { useEffect, useState } from "react";
 import { Activity, Users, Leaf, Layers } from "lucide-react";
 
 const stats = [
-  { value: 12500, label: "Waste Collected (kg)", icon: <Activity size={36} className="text-[#2E8B57]" /> },
-  { value: 75, label: "Communities Reached", icon: <Users size={36} className="text-[#2E8B57]" /> },
-  { value: 3400, label: "CO₂ Saved (kg)", icon: <Leaf size={36} className="text-[#2E8B57]" /> },
-  { value: 58, label: "Projects Completed", icon: <Layers size={36} className="text-[#2E8B57]" /> },
+  { value: 300, label: "Waste Collected (kg)", icon: <Activity size={36} className="text-[#2E8B57]" /> },
+  { value: 4, label: "Communities Reached", icon: <Users size={36} className="text-[#2E8B57]" /> },
+  { value: 25, label: "CO₂ Saved (kg)", icon: <Leaf size={36} className="text-[#2E8B57]" /> },
+  { value: 0, label: "Projects Completed", icon: <Layers size={36} className="text-[#2E8B57]" /> },
 ];
 
 export default function ImpactCounter() {
