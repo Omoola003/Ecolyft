@@ -28,7 +28,7 @@ export default function OurStory() {
             opportunity to create a win-win solution.
           </p>
           <p className="text-gray-700 text-base sm:text-lg">
-            Founded in 2022, we started with a pilot program in three
+            Founded in 2025, we started with a pilot program in three
             neighborhoods, connecting households directly with recycling
             facilities. Today, we&apos;ve expanded across multiple cities,
             creating a transparent, efficient network that benefits everyone

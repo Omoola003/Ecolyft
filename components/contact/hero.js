@@ -10,7 +10,7 @@ const heroVariants = {
 
 export default function ContactHero() {
   return (
-    <section className="bg-[#EDFDF1] py-16 sm:py-24 flex items-center justify-center text-center">
+    <section className="bg-[#EDFDF1] py-8 sm:py-12 flex items-center justify-center text-center">
       <div className="max-w-3xl px-4 sm:px-6 lg:px-8">
         {/* Page Title */}
         <motion.h1

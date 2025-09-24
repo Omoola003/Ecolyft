@@ -20,7 +20,7 @@ const itemVariants = {
 
 export default function Hero() {
   return (
-    <section className="relative w-full bg-[#EDFDF1] flex items-start pt-30 pb-12 sm:pb-20">
+    <section className="relative w-full bg-[#EDFDF1] flex items-start pt-12 pb-12 sm:pb-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex flex-col-reverse md:flex-row items-start gap-10 md:gap-16">
         
         {/* Left Column: Text Content */}

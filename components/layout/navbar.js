@@ -29,11 +29,11 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 w-full z-50 bg-white transition-all duration-300 ${
+      className={`sticky top-0 w-full z-50 bg-white transition-all duration-300 ${
         isScrolled ? "shadow-md py-3" : "py-4"
       }`}
     >
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto flex items-center justify-between px-6 lg:px-8 relative">
         {/* Logo */}
         <Link href="/" className="flex-shrink-0">
           <Image
@@ -83,37 +83,37 @@ export default function Header() {
         >
           {mobileOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
-      </div>
 
-      {/* Mobile Menu */}
-      {mobileOpen && (
-        <nav className="md:hidden flex flex-col gap-4 p-6 bg-white shadow-lg">
-          {NAV_ITEMS.map((item) => {
-            const isActive = pathname === item.href;
-            return (
-              <Link
-                key={item.name}
-                href={item.href}
-                onClick={() => setMobileOpen(false)}
-                className={`transition-colors duration-300 ${
-                  isActive
-                    ? "text-green-700 font-semibold"
-                    : "text-gray-700 hover:text-green-500"
-                }`}
-              >
-                {item.name}
-              </Link>
-            );
-          })}
-          <Link
-            href="/request-pickup"
-            onClick={() => setMobileOpen(false)}
-            className="bg-green-600 text-white px-6 py-2 rounded-lg transition-all duration-300 hover:bg-green-500 text-center"
-          >
-            Request Pickup
-          </Link>
-        </nav>
-      )}
+        {/* Mobile Menu - now absolute overlay */}
+        {mobileOpen && (
+          <nav className="absolute top-full left-0 w-full bg-white shadow-lg flex flex-col gap-4 p-6 md:hidden z-50">
+            {NAV_ITEMS.map((item) => {
+              const isActive = pathname === item.href;
+              return (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  onClick={() => setMobileOpen(false)}
+                  className={`transition-colors duration-300 ${
+                    isActive
+                      ? "text-green-700 font-semibold"
+                      : "text-gray-700 hover:text-green-500"
+                  }`}
+                >
+                  {item.name}
+                </Link>
+              );
+            })}
+            <Link
+              href="/request-pickup"
+              onClick={() => setMobileOpen(false)}
+              className="bg-green-600 text-white px-6 py-2 rounded-lg transition-all duration-300 hover:bg-green-500 text-center"
+            >
+              Request Pickup
+            </Link>
+          </nav>
+        )}
+      </div>
     </header>
   );
 }
