@@ -43,7 +43,7 @@ export default function CTASection() {
             Request a Pickup
           </a>
           <a
-            href="/partner"
+            href="/partners"
             className="border-2 border-white text-white font-semibold px-6 py-3 rounded-lg hover:bg-white hover:text-green-700 transition-all duration-300"
           >
             Partner With Us

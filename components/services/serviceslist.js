@@ -1,60 +1,59 @@
 "use client";
 
 import { motion } from "framer-motion";
-import {
-  Recycle,
-  ClipboardList,
-  GraduationCap,
-  Briefcase,
-  CalendarCheck,
-  Users
-} from "lucide-react";
+import { FaBox, FaRecycle, FaHandsHelping, FaClock, FaMapMarkerAlt, FaDollarSign, FaDashcube } from "react-icons/fa";
+import Link from "next/link";
 
 const services = [
   {
-    title: "Recycling Programs",
-    description:
-      "Custom recycling systems for communities and businesses, designed to maximize material recovery.",
-    icon: Recycle,
+    title: "PickUp (Trash2Cash)",
+    status: "Active",
+    description: "Transform your household plastic waste into immediate cash rewards with our convenient pickup service.",
+    specifications: [
+      { icon: FaRecycle, label: "Accepted Materials", value: "PET bottles, PP, HDPE containers" },
+      { icon: FaBox, label: "Minimum Pickup", value: "5kg per collection" },
+      { icon: FaClock, label: "Frequency", value: "Weekly or on-demand" },
+      { icon: FaMapMarkerAlt, label: "Service Areas", value: "Urban and suburban zones" },
+      { icon: FaDollarSign, label: "Payment Rate", value: "$0.50-1.20 per kg" },
+    ],
+    cta: { text: "Request Pickup", href: "/request-pickup" },
+    id: "pickup"
   },
   {
-    title: "Waste Audits",
-    description:
-      "Data-driven waste analysis to identify reduction opportunities and improve sustainability metrics.",
-    icon: ClipboardList,
+    title: "Bales, Flakes & Pellets",
+    status: "Active",
+    description: "Premium quality recycled PET & HDPE materials for industrial manufacturing applications.",
+    specifications: [
+      { icon: FaRecycle, label: "Material Types", value: "PET flakes, PP flakes, HDPE pellets" },
+      { icon: FaDashcube, label: "Purity Level", value: "99.5%+ certified" },
+      { icon: FaBox, label: "Packaging", value: "25kg bags, bulk containers" },
+      { icon: FaClock, label: "Supply Capacity", value: "5+ tons/month" },
+      { icon: FaHandsHelping, label: "ESG Compliance", value: "Transparent sourcing & reporting" },
+    ],
+    cta: { text: "Request Supply", href: "#" },
+    id: "bales-flakes-pellets"
   },
   {
-    title: "Sustainability Training",
-    description:
-      "Workshops and educational programs to engage employees, students, and community members.",
-    icon: GraduationCap,
-  },
-  {
-    title: "Consultancy Services",
-    description:
-      "Strategic guidance for municipalities and corporations to achieve environmental goals.",
-    icon: Briefcase,
-  },
-  {
-    title: "Eco-Event Management",
-    description:
-      "Plan and execute events with sustainable practices, from zero-waste to eco-friendly materials.",
-    icon: CalendarCheck,
-  },
-  {
-    title: "Partnership Programs",
-    description:
-      "Collaborations with stakeholders to build impactful, long-term sustainability initiatives.",
-    icon: Users,
+    title: "Sustainable Solutions",
+    status: "Active",
+    description: "Custom recycling programs with measurable CSR impact for corporate and community partners.",
+    specifications: [
+      { icon: FaHandsHelping, label: "Program Type", value: "Corporate & Community Recycling Program" },
+      { icon: FaRecycle, label: "Coverage", value: "Offices, Malls, Estates, Hospitals" },
+      { icon: FaClock, label: "Collection Frequency", value: "Scheduled pickups per partner" },
+      { icon: FaHandsHelping, label: "CSR Visibility", value: "Quarterly measurable impacts" },
+      { icon: FaDollarSign, label: "Community Impact", value: "Annual conversion of plastics into CSR funds" },
+    ],
+    cta: { text: "Learn More", href: "#" },
+    id: "sustainable-solutions"
   },
 ];
 
-export default function ServicesList() {
+export default function Services() {
   return (
-    <section id="services-list" className="bg-gray-50 py-16 sm:py-20">
+    <section className="py-16 sm:py-20 bg-white" id="services">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* Section Heading */}
+        {/* Page Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -62,37 +61,62 @@ export default function ServicesList() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
-            What We Offer
-          </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            Explore our range of services crafted to help you achieve your environmental and sustainability objectives.
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#2E8B57] mb-4">
+            Our Services
+          </h1>
+          <p className="text-gray-700 text-base sm:text-lg md:text-xl max-w-3xl mx-auto">
+            Explore our comprehensive solutions for households, industries, and communities to turn waste into opportunity.
           </p>
         </motion.div>
 
         {/* Services Grid */}
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {services.map((service, idx) => {
-            const Icon = service.icon;
-            return (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: idx * 0.05 }}
-                className="bg-white p-6 rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300"
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {services.map((service, idx) => (
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: idx * 0.1 }}
+              className="bg-[#EDFDF1] rounded-xl shadow-lg p-6 flex flex-col justify-between hover:shadow-xl hover:scale-105 transition-transform duration-300"
+            >
+              {/* Header */}
+              <div className="flex justify-between items-center mb-4">
+                <h3 className="text-xl font-semibold text-[#2E8B57]">{service.title}</h3>
+                <span className="text-sm font-medium bg-green-600 text-white px-2 py-1 rounded-full">
+                  {service.status}
+                </span>
+              </div>
+
+              {/* Description */}
+              <p className="text-gray-700 mb-4 text-left">{service.description}</p>
+
+              {/* Specifications */}
+              <ul className="space-y-3 mb-6 text-left">
+                {service.specifications.map((spec, sidx) => {
+                  const Icon = spec.icon;
+                  return (
+                    <li key={sidx} className="flex items-start gap-3">
+                      <span className="text-green-600 mt-1">
+                        <Icon size={18} />
+                      </span>
+                      <div className="text-sm text-gray-800">
+                        <span className="font-semibold">{spec.label}:</span> {spec.value}
+                      </div>
+                    </li>
+                  );
+                })}
+              </ul>
+
+              {/* CTA */}
+              <Link
+                href={service.cta.href}
+                className="mt-auto inline-block bg-green-600 text-white font-semibold px-6 py-3 rounded-lg shadow-md hover:bg-green-500 transition-all duration-300 text-center"
               >
-                <div className="w-14 h-14 mb-4 flex items-center justify-center bg-[#E6F4EA] rounded-lg">
-                  <Icon className="w-7 h-7 text-[#2E8B57]" />
-                </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                  {service.title}
-                </h3>
-                <p className="text-gray-600 text-sm">{service.description}</p>
-              </motion.div>
-            );
-          })}
+                {service.cta.text}
+              </Link>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>

@@ -81,7 +81,7 @@ export default function ProductsServices() {
         {/* CTA Button */}
         <div className="mt-12 text-center">
           <motion.a
-            href="/request-supply"
+            href="#"
             className="inline-block bg-green-600 text-white font-semibold px-8 py-4 rounded-lg shadow-md hover:scale-105 hover:bg-green-500 transition-all duration-300"
             whileHover={{ scale: 1.05 }}
           >

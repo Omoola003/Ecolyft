@@ -8,7 +8,7 @@ const heroVariants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
 };
 
-export default function AboutHero() {
+export default function RequestPickupHero() {
   return (
     <section className="bg-[#EDFDF1] py-16 sm:py-24 flex items-center justify-center text-center">
       <div className="max-w-3xl px-4 sm:px-6 lg:px-8">
@@ -20,7 +20,7 @@ export default function AboutHero() {
           viewport={{ once: true }}
           variants={heroVariants}
         >
-          About Us
+          Request a Pickup
         </motion.h1>
 
         {/* Breadcrumb */}
@@ -34,7 +34,7 @@ export default function AboutHero() {
           <Link href="/" className="hover:underline">
             Home
           </Link>{" "}
-          / <span className="font-semibold text-gray-900">About Us</span>
+          / <span className="font-semibold text-gray-900">Request Pickup</span>
         </motion.div>
 
         {/* Page Description */}
@@ -45,9 +45,8 @@ export default function AboutHero() {
           viewport={{ once: true }}
           variants={heroVariants}
         >
-          We&apos;re building the most accessible infrastructure for a circular
-          economy, where waste becomes opportunity and sustainability drives
-          prosperity.
+          Schedule your eco-friendly waste pickup in just a few steps.  
+          Every request brings us closer to a cleaner, sustainable future.
         </motion.p>
       </div>
     </section>

@@ -5,10 +5,10 @@ import { useEffect, useState } from "react";
 import { Activity, Users, Leaf, Layers } from "lucide-react";
 
 const stats = [
-  { value: 12500, label: "Waste Collected (kg)", icon: <Activity size={36} className="text-white" /> },
-  { value: 75, label: "Communities Reached", icon: <Users size={36} className="text-white" /> },
-  { value: 3400, label: "CO₂ Saved (kg)", icon: <Leaf size={36} className="text-white" /> },
-  { value: 58, label: "Projects Completed", icon: <Layers size={36} className="text-white" /> },
+  { value: 12500, label: "Waste Collected (kg)", icon: <Activity size={36} className="text-[#2E8B57]" /> },
+  { value: 75, label: "Communities Reached", icon: <Users size={36} className="text-[#2E8B57]" /> },
+  { value: 3400, label: "CO₂ Saved (kg)", icon: <Leaf size={36} className="text-[#2E8B57]" /> },
+  { value: 58, label: "Projects Completed", icon: <Layers size={36} className="text-[#2E8B57]" /> },
 ];
 
 export default function ImpactCounter() {
@@ -54,7 +54,7 @@ export default function ImpactCounter() {
   }, [hasAnimated]);
 
   return (
-    <section id="impact" className="relative bg-gradient-to-r from-[#2E8B57] to-[#276847] py-16 text-white rounded-3xl mr-5 ml-5 mb-10 mt-10">
+    <section id="impact" className="relative bg-[#EDFDF1] py-16 text-[#2E8B57] rounded-3xl mr-5 ml-5 mb-10 mt-10">
       <div className="max-w-7xl mx-auto px-6 text-center">
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
@@ -88,7 +88,7 @@ export default function ImpactCounter() {
                 {counts[idx].toLocaleString()}
               </span>
 
-              <p className="mt-2 text-sm md:text-base text-white/80">{stat.label}</p>
+              <p className="mt-2 text-sm md:text-base text-[#2E8B57]">{stat.label}</p>
             </motion.div>
           ))}
         </div>

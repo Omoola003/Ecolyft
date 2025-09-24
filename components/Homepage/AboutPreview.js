@@ -77,7 +77,7 @@ export default function AboutPreview() {
 
             {/* CTA Button */}
             <motion.a
-              href="/request-pickup"
+              href="/partners"
               className="inline-block bg-green-600 text-white font-semibold px-6 py-3 rounded-lg shadow-md hover:scale-105 hover:bg-green-500 transition-all duration-300 text-center w-max"
               whileHover={{ scale: 1.05 }}
             >

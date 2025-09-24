@@ -17,13 +17,15 @@ const navLinks = [
   { href: "/about", label: "About Us" },
   { href: "/services", label: "Products & Services" },
   { href: "/contact", label: "Contact" },
+  { href: "/partners", label: "Partnership" },
+  { href: "/faqs", label: "Frequently Asked Questions" },
 ];
 
 const ServicesLinks = [
-  { href: "#", label: "Pickup (Trash2Cash" },
-  { href: "#", label: "Flakes" },
-  { href: "#", label: "Pellets" },
-  { href: "#", label: "Sustainable Solutions" },
+  { href: "/services/#services", label: "Pickup (Trash2Cash)" },
+  { href: "/services/#services", label: "Flakes" },
+  { href: "/services/#services", label: "Pellets" },
+  { href: "/services/#services", label: "Sustainable Solutions" },
 ];
 
 const hoverFocusClasses =

@@ -1,55 +1,53 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
-export default function PartnersHero() {
+const heroVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+};
+
+export default function PartnerHero() {
   return (
-    <section className="py-20 sm:py-32 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-        
-        {/* Left: Text */}
-        <motion.div
-          initial={{ opacity: 0, x: -30 }}
-          whileInView={{ opacity: 1, x: 0 }}
+    <section className="bg-[#EDFDF1] py-16 sm:py-24 flex items-center justify-center text-center">
+      <div className="max-w-3xl px-4 sm:px-6 lg:px-8">
+        {/* Page Title */}
+        <motion.h1
+          className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#2E8B57] leading-snug mb-4"
+          initial="hidden"
+          whileInView="visible"
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          variants={heroVariants}
         >
-          <p className="text-[#2E8B57] uppercase font-semibold tracking-widest text-sm mb-2">
-            Our Partners
-          </p>
-          <h1 className="text-3xl md:text-4xl font-bold text-boldBlack leading-snug mb-4">
-            Building a Greener Future Together
-          </h1>
-          <p className="text-gray-600 text-base leading-relaxed mb-6">
-            At Ecolyft, we believe collaboration is key to sustainable impact.
-            Together with our partners, we create solutions that transform waste
-            into resources, foster community engagement, and protect the planet.
-          </p>
-          <a
-            href="/contact"
-            className="inline-block bg-[#2E8B57] text-white px-6 py-3 rounded-full font-medium hover:bg-[#246b45] transition-all duration-300"
-          >
-            Become a Partner
-          </a>
+          Partner With Us
+        </motion.h1>
+
+        {/* Breadcrumb */}
+        <motion.div
+          className="text-sm sm:text-base text-gray-600 mb-4"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={heroVariants}
+        >
+          <Link href="/" className="hover:underline">
+            Home
+          </Link>{" "}
+          / <span className="font-semibold text-gray-900">Partner With Us</span>
         </motion.div>
 
-        {/* Right: Image */}
-        <motion.div
-          initial={{ opacity: 0, x: 30 }}
-          whileInView={{ opacity: 1, x: 0 }}
+        {/* Page Description */}
+        <motion.p
+          className="text-gray-800 text-base sm:text-lg md:text-xl"
+          initial="hidden"
+          whileInView="visible"
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="relative w-full h-[300px] md:h-[450px] rounded-2xl overflow-hidden shadow-lg"
+          variants={heroVariants}
         >
-          <Image
-            src="/images/partners-hero.jpg" // Replace with actual image path
-            alt="Ecolyft partnerships"
-            fill
-            className="object-cover"
-            priority
-          />
-        </motion.div>
+          Collaborate with EcoLyft to drive sustainable change, enhance your brand&apos;s environmental impact, 
+          and join a growing network dedicated to responsible waste management.
+        </motion.p>
       </div>
     </section>
   );

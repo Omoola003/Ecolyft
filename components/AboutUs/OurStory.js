@@ -1,66 +1,96 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Image from "next/image";
-import Link from "next/link";
+import { motion } from "framer-motion";
+
+const storyVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+};
 
 export default function OurStory() {
   return (
-    <section className="bg-white py-16 sm:py-20">
-      <div className="max-w-7xl mx-auto px-6 sm:px-8">
-        <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
+    <section className="py-16 sm:py-24 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+        {/* Left Column: Text Content */}
+        <motion.div
+          className="flex flex-col gap-6"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={storyVariants}
+        >
+          <h2 className="text-3xl sm:text-4xl font-bold text-[#2E8B57]">Our Story</h2>
+          <p className="text-gray-700 text-base sm:text-lg">
+            EcoLyft was born from a simple observation: millions of tons of
+            valuable plastic waste end up in landfills while industries struggle
+            to find reliable sources of recycled materials. We saw an
+            opportunity to create a win-win solution.
+          </p>
+          <p className="text-gray-700 text-base sm:text-lg">
+            Founded in 2022, we started with a pilot program in three
+            neighborhoods, connecting households directly with recycling
+            facilities. Today, we&apos;ve expanded across multiple cities,
+            creating a transparent, efficient network that benefits everyone
+            involved.
+          </p>
+          <p className="text-gray-700 text-base sm:text-lg">
+            Our vision extends beyond waste collection. We&apos;re building the
+            infrastructure for a circular economy where resources flow
+            efficiently, communities prosper, and environmental impact is
+            minimized through innovation and transparency.
+          </p>
+        </motion.div>
 
-          {/* Left Column - Image */}
+        {/* Right Column: Images + Text Box */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {/* Top 2 Images */}
           <motion.div
-            initial={{ opacity: 0, x: -40 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            className="relative w-full h-48 sm:h-60 rounded-xl overflow-hidden"
+            initial="hidden"
+            whileInView="visible"
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="flex-1 relative w-full h-[300px] sm:h-[400px] lg:h-[500px]"
+            variants={storyVariants}
           >
             <Image
-              src="/images/ourstory.png"
-              alt="EcoLyft recycling community"
+              src="/images/story1.png"
+              alt="EcoLyft in action 1"
               fill
-              className="object-cover rounded-2xl shadow-lg"
+              className="object-cover"
             />
           </motion.div>
 
-          {/* Right Column - Text */}
           <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            className="relative w-full h-55 sm:h-70 rounded-xl overflow-hidden"
+            initial="hidden"
+            whileInView="visible"
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="flex-1 text-center lg:text-left"
+            variants={storyVariants}
           >
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-              Our Story
-            </h2>
-            <p className="text-gray-700 text-base sm:text-lg md:text-xl leading-relaxed mb-4">
-              EcoLyft was born from a vision to tackle Nigeria’s growing waste problem 
-              with innovation, technology, and people at its heart. We saw mountains 
-              of waste as untapped potential — resources that could be transformed into 
-              something valuable.
-            </p>
-            <p className="text-gray-700 text-base sm:text-lg md:text-xl leading-relaxed mb-6">
-              From small neighborhood clean-ups to city-wide recycling initiatives, 
-              our journey has always been powered by community involvement and the 
-              belief that everyone has a role to play in creating a cleaner, greener future.
-            </p>
+            <Image
+              src="/images/story2.png"
+              alt="EcoLyft in action 2"
+              fill
+              className="object-cover"
+            />
+          </motion.div>
 
-            {/* Fixed & Enhanced See Our Impact Button */}
-            <Link
-            href="/about-us/#impact"
-            scroll={true}
-            className="inline-block px-6 py-3 bg-[#2E8B57] text-white font-semibold 
-                        rounded-full shadow-md hover:bg-[#276847] hover:scale-105 
-                        transition-transform duration-300 
-                        focus:outline-none focus:ring-2 focus:ring-[#2E8B57] 
-                        focus:ring-offset-2"
-            >
-            See Our Impact
-            </Link>
+          {/* Bottom Text Box (spans 2 columns on small screens) */}
+          <motion.div
+            className="col-span-1 sm:col-span-2 bg-green-50 rounded-xl p-6 flex flex-col gap-2 shadow-md"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={storyVariants}
+          >
+            <h3 className="text-xl font-semibold text-green-700">
+              Where We&apos;re Going
+            </h3>
+            <ul className="list-disc list-inside text-gray-700 space-y-1 text-sm sm:text-base pl-6">
+              <li>Expand to 50+ cities by 2026</li>
+              <li>Create 1000+ green jobs</li>
+              <li>Process 1M+ kg of plastic waste annually</li>
+            </ul>
           </motion.div>
         </div>
       </div>

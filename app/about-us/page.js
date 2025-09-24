@@ -1,11 +1,11 @@
-import AboutCTA from "@/components/AboutUs/cta";
+import OurCommitment from "@/components/AboutUs/commitement";
 import AboutHero from "@/components/AboutUs/hero";
 import MissionValues from "@/components/AboutUs/mission";
 import ImpactCounter from "@/components/AboutUs/ourImpact";
 import OurStory from "@/components/AboutUs/OurStory";
 import OurTeam from "@/components/AboutUs/OurTeam";
-import PartnersCarousel from "@/components/AboutUs/partners";
-import WhoWeServe from "@/components/AboutUs/WhoWeServe";
+import CTASection from "@/components/Homepage/cta";
+import TrustedBy from "@/components/Homepage/industry";
 
 export default function AboutUs() {
   return (
@@ -13,13 +13,11 @@ export default function AboutUs() {
         <AboutHero />
         <OurStory />
         <MissionValues />
-        <WhoWeServe />
+        <OurCommitment />
         <OurTeam />
         <ImpactCounter />
-        <PartnersCarousel />
-        <AboutCTA />
-
-      {/* Add other sections below */}
+        <TrustedBy />
+        <CTASection />
     </main>
   );
 }

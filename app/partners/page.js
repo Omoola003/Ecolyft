@@ -1,16 +1,20 @@
 import PartnerBenefits from "@/components/partners/benefits";
 import PartnersCTA from "@/components/partners/cta";
 import PartnersHero from "@/components/partners/hero";
-import PartnersShowcase from "@/components/partners/partners";
-import PartnershipProcess from "@/components/partners/process";
+import PartnerImageSection from "@/components/partners/imageheader";
+import SharedVisionSection from "@/components/partners/vision";
+import PartnerInquiryForm from "@/components/partners/inquiry";
+import FAQSection from "@/components/faqs";
 
 export default function partners() {
     return (
         <main className="flex flex-col">
             <PartnersHero />
-            <PartnersShowcase />
+            <PartnerImageSection />
             <PartnerBenefits />
-            <PartnershipProcess/>
+            <SharedVisionSection />
+            <PartnerInquiryForm />
+            <FAQSection />
             <PartnersCTA/>
         </main>
     )

@@ -59,7 +59,7 @@ export default function Hero() {
             </Link>
 
             <Link
-              href="/contact"
+              href="/partners"
               className="inline-block bg-transparent border border-green-600 text-boldBlack font-semibold px-6 py-3 rounded-lg shadow-md hover:scale-105 hover:bg-green-400 transition-all duration-300 text-center text-sm sm:text-base"
             >
               Partner With Us

@@ -1,99 +1,77 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ClipboardCheck, Lightbulb, Rocket, RefreshCw } from "lucide-react";
+import { FaTruck, FaCogs, FaIndustry, FaShippingFast } from "react-icons/fa";
 
-const steps = [
+const processSteps = [
   {
-    title: "Consultation & Needs Assessment",
-    description:
-      "We begin with a thorough discussion to understand your waste management challenges and goals.",
-    icon: ClipboardCheck,
+    step: "01",
+    title: "Collection",
+    description: "Scheduled pickup from verified households and businesses.",
+    icon: FaTruck,
   },
   {
-    title: "Custom Strategy Design",
-    description:
-      "Our team designs a tailored recycling and collection strategy that fits your specific needs.",
-    icon: Lightbulb,
+    step: "02",
+    title: "Processing",
+    description: "Sorting, cleaning, and quality control at certified facilities.",
+    icon: FaCogs,
   },
   {
-    title: "Implementation & Training",
-    description:
-      "We roll out the agreed solution, providing training and resources for smooth adoption.",
-    icon: Rocket,
+    step: "03",
+    title: "Manufacturing",
+    description: "Converting waste into high-quality flakes and pellets.",
+    icon: FaIndustry,
   },
   {
-    title: "Ongoing Support & Optimization",
-    description:
-      "We monitor performance, gather feedback, and make continuous improvements.",
-    icon: RefreshCw,
+    step: "04",
+    title: "Delivery",
+    description: "Direct supply to industry partners with full traceability.",
+    icon: FaShippingFast,
   },
 ];
 
-export default function ProcessTimeline() {
+export default function OurProcess() {
   return (
-    <section className="py-20 bg-white">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-16 sm:py-20 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-12"
         >
-          <p className="text-[#2E8B57] font-semibold uppercase tracking-widest mb-2 text-sm">
+          <p className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#2E8B57] mb-4">
             Our Process
           </p>
-          <h2 className="text-3xl md:text-4xl font-bold text-boldBlack">
-            How We Work
+          <h2 className="text-gray-700 text-base sm:text-lg md:text-xl max-w-3xl mx-auto">
+            From collection to delivery, transparency and quality at every step
           </h2>
         </motion.div>
 
-        {/* Timeline */}
-        <div className="relative">
-          {/* Connecting Line */}
-          <div className="hidden lg:block absolute top-1/2 left-0 w-full h-1 bg-gray-200"></div>
-          <div className="lg:hidden absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gray-200"></div>
-
-          <div className="flex flex-col lg:flex-row lg:justify-between gap-12">
-            {steps.map((step, idx) => {
-              const Icon = step.icon;
-              return (
-                <motion.div
-                  key={idx}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: idx * 0.2 }}
-                  className="relative flex flex-col items-center lg:items-start text-center lg:text-left lg:w-1/4"
-                >
-                  {/* Background Step Number */}
-                  <span className="absolute text-[6rem] font-bold text-gray-200 opacity-30 -z-10 top-[-1rem] lg:top-[-2rem] left-1/2 lg:left-0 transform -translate-x-1/2 lg:translate-x-0 pointer-events-none">
-                    {idx + 1}
-                  </span>
-
-                  {/* Circle & Icon */}
-                  <div className="relative z-10 flex items-center justify-center w-14 h-14 rounded-full bg-[#2E8B57] text-white shadow-lg mb-4">
-                    <Icon size={28} />
-                  </div>
-
-                  {/* Title & Description */}
-                  <h3 className="text-lg font-semibold text-boldBlack mb-2">
-                    {step.title}
-                  </h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">
-                    {step.description}
-                  </p>
-
-                  {/* Connector Dot for vertical view */}
-                  {idx < steps.length - 1 && (
-                    <span className="lg:hidden absolute bottom-[-2rem] w-3 h-3 bg-[#2E8B57] rounded-full"></span>
-                  )}
-                </motion.div>
-              );
-            })}
-          </div>
+        {/* Steps */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          {processSteps.map((step, idx) => {
+            const Icon = step.icon;
+            return (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: idx * 0.1 }}
+                className="bg-[#EDFDF1] rounded-xl shadow-md p-6 flex flex-col items-center text-center hover:shadow-xl transition-shadow duration-300"
+              >
+                <div className="bg-green-600 text-white p-4 rounded-full inline-flex items-center justify-center mb-4">
+                  <Icon size={28} />
+                </div>
+                <span className="text-green-600 font-bold text-xl mb-2">{step.step}</span>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">{step.title}</h3>
+                <p className="text-gray-700 text-sm">{step.description}</p>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>
