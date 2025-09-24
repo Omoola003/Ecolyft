@@ -4,7 +4,7 @@ import PartnersHero from "@/components/partners/hero";
 import PartnerImageSection from "@/components/partners/imageheader";
 import SharedVisionSection from "@/components/partners/vision";
 import PartnerInquiryForm from "@/components/partners/inquiry";
-import FAQSection from "@/components/faqs";
+import FAQSection from "@/components/FAQs/faq";
 
 export default function partners() {
     return (
