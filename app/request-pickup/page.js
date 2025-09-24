@@ -1,4 +1,4 @@
-import FAQSection from "@/components/faqs";
+import FAQSection from "@/components/FAQs/faq";
 import RequestPickupHero from "@/components/RequestPickup/hero";
 import RequestPickupForm from "@/components/RequestPickup/RequestPickupForm";
 
