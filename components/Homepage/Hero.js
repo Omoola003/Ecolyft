@@ -4,7 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
-// Animation variants
 const heroVariants = {
   hidden: { opacity: 0 },
   visible: {
@@ -20,9 +19,20 @@ const itemVariants = {
 
 export default function Hero() {
   return (
-    <section className="relative w-full bg-[#EDFDF1] flex items-start pt-12 pb-12 sm:pb-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex flex-col-reverse md:flex-row items-start gap-10 md:gap-16">
-        
+    <section className="relative w-full h-[500px] flex items-start pt-24 pb-16 sm:pb-20">
+      {/* Background with overlay */}
+      <div className="absolute inset-0">
+        <Image
+          src="/images/hero-bg.jpg" // <-- replace with your chosen bg image
+          alt="Background"
+          fill
+          priority
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-[#EDFDF1]/50" /> {/* overlay */}
+      </div>
+
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex flex-col-reverse md:flex-row items-start gap-10 md:gap-16">
         {/* Left Column: Text Content */}
         <motion.div
           className="flex-1 text-left md:text-left"
@@ -32,19 +42,19 @@ export default function Hero() {
         >
           <motion.h1
             variants={itemVariants}
-            className="text-[clamp(2rem,6vw,4rem)] font-bold text-[#2E8B57] leading-tight mb-4"
+            className="text-[clamp(2rem,6vw,3.5rem)] font-bold text-[#2E8B57] leading-tight mb-4"
           >
-            Reimagining Waste
+            Turn Your Plastic Into Power
           </motion.h1>
 
           <motion.p
             variants={itemVariants}
             className="text-base sm:text-lg md:text-xl text-gray-800 mb-8 max-w-2xl mx-auto md:mx-0"
           >
-            EcoLyft transforms <strong>PLASTIC waste</strong> into{" "}
-            <strong>cash for households</strong> and{" "}
-            <strong>high-quality recycled materials for industry</strong>. Join
-            us in building a sustainable future.
+            Every bottle and bag you recycle with <strong>EcoLyft</strong>{" "}
+            becomes <strong>instant cash in your pocket</strong> and{" "}
+            <strong>cleaner materials for businesses</strong>. Together, we’re
+            rewriting the story of waste—one pickup at a time.
           </motion.p>
 
           <motion.div
@@ -60,27 +70,11 @@ export default function Hero() {
 
             <Link
               href="/partners"
-              className="inline-block bg-transparent border border-green-600 text-boldBlack font-semibold px-6 py-3 rounded-lg shadow-md hover:scale-105 hover:bg-green-400 transition-all duration-300 text-center text-sm sm:text-base"
+              className="inline-block bg-transparent border border-green-600 text-black font-semibold px-6 py-3 rounded-lg shadow-md hover:scale-105 hover:bg-green-400 hover:text-white transition-all duration-300 text-center text-sm sm:text-base"
             >
               Partner With Us
             </Link>
           </motion.div>
-        </motion.div>
-
-        {/* Right Column: Hero Image */}
-        <motion.div
-          className="flex-1 w-full flex justify-center items-center"
-          variants={itemVariants}
-        >
-          <div className="relative w-full max-w-[320px] sm:max-w-[400px] md:max-w-none h-[250px] sm:h-[350px] md:h-[420px]">
-            <Image
-              src="/images/hero.png"
-              alt="EcoLyft Hero"
-              fill
-              className="object-contain"
-              priority
-            />
-          </div>
         </motion.div>
       </div>
     </section>
