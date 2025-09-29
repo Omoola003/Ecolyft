@@ -4,38 +4,73 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
+// Animation variants
 const heroVariants = {
   hidden: { opacity: 0 },
   visible: { 
     opacity: 1, 
-    transition: { staggerChildren: 0.2, ease: "easeOut" } 
+    transition: { staggerChildren: 0.25, ease: "easeOut" } 
   },
 };
 
 const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { 
-    opacity: 1, 
-    y: 0, 
-    transition: { duration: 0.6 } 
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
+};
+
+// Recycling rotation
+const recycleAnimation = {
+  animate: {
+    rotate: [0, 360],
+    transition: { duration: 15, repeat: Infinity, ease: "linear" },
+  },
+};
+
+// Breathing blob
+const blobAnimation = {
+  animate: {
+    scale: [1, 1.05, 1],
+    opacity: [0.6, 0.7, 0.6],
+    transition: { duration: 8, repeat: Infinity, ease: "easeInOut" },
   },
 };
 
 export default function Hero() {
   return (
-    <section className="relative w-full bg-white py-12 sm:py-20 overflow-hidden">
+    <section className="relative w-full bg-white py-12 sm:py-14 overflow-hidden">
       {/* Background gradient */}
       <div className="absolute inset-0 -z-10 bg-gradient-to-r from-green-50 via-white to-green-50" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
-          {/* Left Column: Text */}
+        <motion.div
+          variants={heroVariants}
+          initial="hidden"
+          animate="visible"
+          className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center"
+        >
+          {/* Hero Image (top on mobile, right on desktop) */}
           <motion.div
-            variants={heroVariants}
-            initial="hidden"
-            animate="visible"
-            className="text-left"
+            variants={itemVariants}
+            className="relative flex justify-center order-first md:order-last"
           >
+            <motion.div
+              className="absolute -z-10 w-[120%] h-[120%] rounded-full bg-green-100 blur-3xl"
+              animate={blobAnimation.animate}
+            />
+            <motion.div {...recycleAnimation}>
+              <Image
+                src="/images/hero.png"
+                alt="EcoLyft Recycling"
+                width={480}
+                height={360}
+                className="w-full max-w-sm md:max-w-md h-auto object-contain relative z-10"
+                priority
+              />
+            </motion.div>
+          </motion.div>
+
+          {/* Text Content */}
+          <motion.div variants={heroVariants} className="text-left">
             <motion.h1
               variants={itemVariants}
               className="text-[clamp(1.9rem,5vw,3.5rem)] font-bold text-[#2E8B57] leading-tight mb-4"
@@ -55,7 +90,7 @@ export default function Hero() {
 
             <motion.div
               variants={itemVariants}
-              className="flex flex-col sm:flex-row gap-4"
+              className="flex flex-row flex-wrap gap-4"
             >
               <Link
                 href="/request-pickup"
@@ -78,25 +113,7 @@ export default function Hero() {
               🌍 Over <strong>1,000 bottles</strong> recycled and counting.
             </motion.p>
           </motion.div>
-
-          {/* Right Column: Visual with blob */}
-          <motion.div
-            variants={itemVariants}
-            initial="hidden"
-            animate="visible"
-            className="relative flex justify-center"
-          >
-            <div className="absolute -z-10 w-[120%] h-[120%] rounded-full bg-green-100 blur-3xl opacity-60 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
-            <Image
-              src="/images/hero.png" // transparent PNG/SVG works best
-              alt="EcoLyft Recycling"
-              width={480}
-              height={360}
-              className="w-full max-w-sm md:max-w-md h-auto object-contain relative z-10"
-              priority
-            />
-          </motion.div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
