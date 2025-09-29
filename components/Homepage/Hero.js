@@ -6,76 +6,97 @@ import { motion } from "framer-motion";
 
 const heroVariants = {
   hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { staggerChildren: 0.2, ease: "easeOut" },
+  visible: { 
+    opacity: 1, 
+    transition: { staggerChildren: 0.2, ease: "easeOut" } 
   },
 };
 
 const itemVariants = {
   hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+  visible: { 
+    opacity: 1, 
+    y: 0, 
+    transition: { duration: 0.6 } 
+  },
 };
 
 export default function Hero() {
   return (
-    <section className="relative w-full h-[500px] flex items-start pt-24 pb-16 sm:pb-20">
-      {/* Background with overlay */}
-      <div className="absolute inset-0">
-        <Image
-          src="/images/hero-bg.jpg" // <-- replace with your chosen bg image
-          alt="Background"
-          fill
-          priority
-          className="object-cover"
-        />
-        <div className="absolute inset-0 bg-[#EDFDF1]/50" /> {/* overlay */}
-      </div>
+    <section className="relative w-full bg-white py-12 sm:py-20 overflow-hidden">
+      {/* Background gradient */}
+      <div className="absolute inset-0 -z-10 bg-gradient-to-r from-green-50 via-white to-green-50" />
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex flex-col-reverse md:flex-row items-start gap-10 md:gap-16">
-        {/* Left Column: Text Content */}
-        <motion.div
-          className="flex-1 text-left md:text-left"
-          variants={heroVariants}
-          initial="hidden"
-          animate="visible"
-        >
-          <motion.h1
-            variants={itemVariants}
-            className="text-[clamp(2rem,6vw,3.5rem)] font-bold text-[#2E8B57] leading-tight mb-4"
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
+          {/* Left Column: Text */}
+          <motion.div
+            variants={heroVariants}
+            initial="hidden"
+            animate="visible"
+            className="text-left"
           >
-            Turn Your Plastic Into Power
-          </motion.h1>
+            <motion.h1
+              variants={itemVariants}
+              className="text-[clamp(1.9rem,5vw,3.5rem)] font-bold text-[#2E8B57] leading-tight mb-4"
+            >
+              We Turn Your Everyday Plastic Waste Into Value.
+            </motion.h1>
 
-          <motion.p
-            variants={itemVariants}
-            className="text-base sm:text-lg md:text-xl text-gray-800 mb-8 max-w-2xl mx-auto md:mx-0"
-          >
-            Every bottle and bag you recycle with <strong>EcoLyft</strong>{" "}
-            becomes <strong>instant cash in your pocket</strong> and{" "}
-            <strong>cleaner materials for businesses</strong>. Together, we’re
-            rewriting the story of waste—one pickup at a time.
-          </motion.p>
+            <motion.p
+              variants={itemVariants}
+              className="text-base sm:text-lg md:text-xl text-gray-800 mb-6 max-w-xl"
+            >
+              Recycle with <strong>EcoLyft</strong> and turn bottles and bags into{" "}
+              <strong>cash in your pocket</strong> and{" "}
+              <strong>cleaner, affordable materials for businesses</strong>. One
+              simple pickup creates impact for you, your community, and the planet.
+            </motion.p>
 
+            <motion.div
+              variants={itemVariants}
+              className="flex flex-col sm:flex-row gap-4"
+            >
+              <Link
+                href="/request-pickup"
+                className="bg-green-600 text-white font-semibold px-6 py-3 rounded-lg shadow-md hover:scale-105 hover:bg-green-500 transition"
+              >
+                Request a Pickup
+              </Link>
+              <Link
+                href="/partners"
+                className="border border-green-600 text-green-700 font-semibold px-6 py-3 rounded-lg shadow-md hover:scale-105 hover:bg-green-500 hover:text-white transition"
+              >
+                Partner With Us
+              </Link>
+            </motion.div>
+
+            <motion.p
+              variants={itemVariants}
+              className="mt-6 text-sm text-gray-600"
+            >
+              🌍 Over <strong>1,000 bottles</strong> recycled and counting.
+            </motion.p>
+          </motion.div>
+
+          {/* Right Column: Visual with blob */}
           <motion.div
             variants={itemVariants}
-            className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start"
+            initial="hidden"
+            animate="visible"
+            className="relative flex justify-center"
           >
-            <Link
-              href="/request-pickup"
-              className="inline-block bg-green-600 text-white font-semibold px-6 py-3 rounded-lg shadow-md hover:scale-105 hover:bg-green-500 transition-all duration-300 text-center text-sm sm:text-base"
-            >
-              Request a Pickup
-            </Link>
-
-            <Link
-              href="/partners"
-              className="inline-block bg-transparent border border-green-600 text-black font-semibold px-6 py-3 rounded-lg shadow-md hover:scale-105 hover:bg-green-400 hover:text-white transition-all duration-300 text-center text-sm sm:text-base"
-            >
-              Partner With Us
-            </Link>
+            <div className="absolute -z-10 w-[120%] h-[120%] rounded-full bg-green-100 blur-3xl opacity-60 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
+            <Image
+              src="/images/hero.png" // transparent PNG/SVG works best
+              alt="EcoLyft Recycling"
+              width={480}
+              height={360}
+              className="w-full max-w-sm md:max-w-md h-auto object-contain relative z-10"
+              priority
+            />
           </motion.div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
