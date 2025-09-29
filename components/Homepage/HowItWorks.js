@@ -36,7 +36,7 @@ export default function HowItWorks() {
     {
       title: "Book a Pickup",
       description:
-        "Schedule a convenient pickup time for your PET & HDPE waste through our platform.",
+        "Schedule a convenient pickup time for your plastic wastes through our platform.",
       icon: <Calendar size={28} className="text-green-600" />,
     },
     {

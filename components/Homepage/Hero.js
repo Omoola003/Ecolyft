@@ -73,19 +73,16 @@ export default function Hero() {
           <motion.div variants={heroVariants} className="text-left">
             <motion.h1
               variants={itemVariants}
-              className="text-[clamp(1.9rem,5vw,3.5rem)] font-bold text-[#2E8B57] leading-tight mb-4"
+              className="text-[clamp(1.5rem,4vw,3rem)] font-bold text-[#2E8B57] leading-tight mb-8"
             >
-              We Turn Your Everyday Plastic Waste Into Value.
+              Turn Your Everyday Plastic Waste into Value.
             </motion.h1>
 
             <motion.p
               variants={itemVariants}
               className="text-base sm:text-lg md:text-xl text-gray-800 mb-6 max-w-xl"
             >
-              Recycle with <strong>EcoLyft</strong> and turn bottles and bags into{" "}
-              <strong>cash in your pocket</strong> and{" "}
-              <strong>cleaner, affordable materials for businesses</strong>. One
-              simple pickup creates impact for you, your community, and the planet.
+              Cash for You! Feedstock for Industry!<br />EcoLyft makes recycling simple, rewarding and impactful.
             </motion.p>
 
             <motion.div

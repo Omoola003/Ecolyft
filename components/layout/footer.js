@@ -66,7 +66,7 @@ export default function Footer() {
             />
           </div>
           <p className="mt-4 text-sm leading-relaxed text-black/80">
-            <span className="font-black text-green-600">EcoLyft</span> — Growth From Waste. Transforming PET & HDPE waste into cash for 
+            <span className="font-black text-green-600">EcoLyft</span> — Growth From Waste. Transforming plastic wastes into cash for 
             households and high-quality recycled materials for industry.
           </p>
           <div className="flex gap-4 mt-6">

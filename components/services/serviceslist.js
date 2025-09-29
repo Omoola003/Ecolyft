@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FaBox, FaRecycle, FaHandsHelping, FaClock, FaMapMarkerAlt, FaDollarSign, FaDashcube } from "react-icons/fa";
+import { FaBox, FaRecycle, FaHandsHelping, FaClock, FaMapMarkerAlt, FaMoneyBill, FaDashcube } from "react-icons/fa";
 import Link from "next/link";
 
 const services = [
@@ -14,7 +14,7 @@ const services = [
       { icon: FaBox, label: "Minimum Pickup", value: "5kg per collection" },
       { icon: FaClock, label: "Frequency", value: "Weekly or on-demand" },
       { icon: FaMapMarkerAlt, label: "Service Areas", value: "Urban and suburban zones" },
-      { icon: FaDollarSign, label: "Payment Rate", value: "$0.50-1.20 per kg" },
+      { icon: FaMoneyBill, label: "Payment Rate", value: "₦500 per 1.20 per kg" },
     ],
     cta: { text: "Request Pickup", href: "/request-pickup" },
     id: "pickup"
@@ -42,7 +42,7 @@ const services = [
       { icon: FaRecycle, label: "Coverage", value: "Offices, Malls, Estates, Hospitals" },
       { icon: FaClock, label: "Collection Frequency", value: "Scheduled pickups per partner" },
       { icon: FaHandsHelping, label: "CSR Visibility", value: "Quarterly measurable impacts" },
-      { icon: FaDollarSign, label: "Community Impact", value: "Annual conversion of plastics into CSR funds" },
+      { icon: FaMoneyBill, label: "Community Impact", value: "Annual conversion of plastics into CSR funds" },
     ],
     cta: { text: "Learn More", href: "#" },
     id: "sustainable-solutions"
