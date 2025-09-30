@@ -23,9 +23,8 @@ const navLinks = [
 
 const ServicesLinks = [
   { href: "/services/#services", label: "Pickup (Trash2Cash)" },
-  { href: "/services/#services", label: "Flakes" },
-  { href: "/services/#services", label: "Pellets" },
-  { href: "/services/#services", label: "Sustainable Solutions" },
+  { href: "/services/#services", label: "Suatainable Feedstock (Recycle Forward)" },
+  { href: "/services/#services", label: "Sustainable Solutions (Elevate CSR)" },
 ];
 
 const hoverFocusClasses =
@@ -66,8 +65,7 @@ export default function Footer() {
             />
           </div>
           <p className="mt-4 text-sm leading-relaxed text-black/80">
-            <span className="font-black text-green-600">EcoLyft</span> — Growth From Waste. Transforming plastic wastes into cash for 
-            households and high-quality recycled materials for industry.
+            <span className="font-black text-green-600">EcoLyft</span> — Building Africa's Most Accessible Circular Economy Infrastructure.
           </p>
           <div className="flex gap-4 mt-6">
             {socialLinks.map((social) => (
@@ -145,13 +143,13 @@ export default function Footer() {
             <li>
               Phone:{" "}
               <a
-                href="tel:+234XXXXXXXXXX"
+                href="tel:+2348071116365"
                 className="underline hover:text-[#FFD700]"
               >
-                +234 XXX XXX XXXX
+                +234 807 111 6365
               </a>
             </li>
-            <li>Location: Lagos, Nigeria</li>
+            <li>Location: Lekki Lagos, Nigeria</li>
           </ul>
         </motion.div>
       </div>

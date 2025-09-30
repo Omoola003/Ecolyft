@@ -13,7 +13,7 @@ const urgentInfo = {
   title: "For Urgent Requests",
   description:
     "Need immediate assistance or have time-sensitive partnership opportunities?",
-  phone: "+234 (807) 111-6369",
+  phone: "+234 (807) 111-6365",
 };
 
 export default function ContactFormSection() {

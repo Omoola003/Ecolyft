@@ -9,7 +9,6 @@ const logos = [
   "/logos/partner3.png",
   "/logos/partner4.png",
   "/logos/partner5.png",
-  "/logos/partner6.png",
 ];
 
 export default function TrustedBy() {

@@ -20,17 +20,17 @@ const services = [
     id: "pickup"
   },
   {
-    title: "Bales, Flakes & Pellets",
+    title: "Sustainable Feedstock (Recycle Forward)",
     status: "Active",
     description: "Premium quality recycled PET & HDPE materials for industrial manufacturing applications.",
     specifications: [
-      { icon: FaRecycle, label: "Material Types", value: "PET flakes, PP flakes, HDPE pellets" },
+      { icon: FaRecycle, label: "Material Types", value: "Bales, Flakes & Pellets (Clear or Mixed)" },
       { icon: FaDashcube, label: "Purity Level", value: "99.5%+ certified" },
       { icon: FaBox, label: "Packaging", value: "25kg bags, bulk containers" },
       { icon: FaClock, label: "Supply Capacity", value: "5+ tons/month" },
       { icon: FaHandsHelping, label: "ESG Compliance", value: "Transparent sourcing & reporting" },
     ],
-    cta: { text: "Request Supply", href: "#" },
+    cta: { text: "Request Supply", href: "/partners/#inquiry" },
     id: "bales-flakes-pellets"
   },
   {
@@ -38,13 +38,13 @@ const services = [
     status: "Active",
     description: "Custom recycling programs with measurable CSR impact for corporate and community partners.",
     specifications: [
-      { icon: FaHandsHelping, label: "Program Type", value: "Corporate & Community Recycling Program" },
+      { icon: FaHandsHelping, label: "Program Type", value: "Corporate, Community & Post-Event Recycling" },
       { icon: FaRecycle, label: "Coverage", value: "Offices, Malls, Estates, Hospitals" },
-      { icon: FaClock, label: "Collection Frequency", value: "Scheduled pickups per partner" },
-      { icon: FaHandsHelping, label: "CSR Visibility", value: "Quarterly measurable impacts" },
-      { icon: FaMoneyBill, label: "Community Impact", value: "Annual conversion of plastics into CSR funds" },
+      { icon: FaClock, label: "Collection Frequency", value: "Scheduled pickups & post-event cleanups" },
+      { icon: FaHandsHelping, label: "CSR Visibility", value: "Quarterly measurable impact reports" },
+      { icon: FaMoneyBill, label: "CSR Impact", value: "Plastics recovered are converted into annual CSR funds in your organization's name" },
     ],
-    cta: { text: "Learn More", href: "#" },
+    cta: { text: "Learn More", href: "/partners/#inquiry" },
     id: "sustainable-solutions"
   },
 ];

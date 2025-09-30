@@ -73,6 +73,13 @@ export default function Header() {
           >
             Request Pickup
           </Link>
+                      <Link
+              href="/partners/#inquiry"
+              onClick={() => setMobileOpen(false)}
+              className="bg-white text-green-600 border-green-600 m-4 px-6 py-2 rounded-lg transition-all duration-300 hover:bg-green-500 text-center cursor-pointer border-2 hover:text-white"
+            >
+              Request Supply
+            </Link>
         </div>
 
         {/* Mobile Menu Button */}
@@ -110,6 +117,13 @@ export default function Header() {
               className="bg-green-600 text-white px-6 py-2 rounded-lg transition-all duration-300 hover:bg-green-500 text-center"
             >
               Request Pickup
+            </Link>
+            <Link
+              href="/partners/#inquiry"
+              onClick={() => setMobileOpen(false)}
+              className="bg-white text-green-600 border-green-600 px-6 py-2 rounded-lg transition-all duration-300 hover:bg-green-500 text-center cursor-pointer border-2 hover:text-white"
+            >
+              Request Supply
             </Link>
           </nav>
         )}

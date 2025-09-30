@@ -12,15 +12,15 @@ const services = [
   },
   {
     icon: <Recycle size={32} className="text-green-600" />,
-    title: "Flakes & Pellets (Recycle Forward)",
+    title: "Sustainable Feedstocks (Recycle Forward)",
     description:
-      "Premium quality recycled PET & HDPE materials for industrial manufacturing applications.",
+      "High grade recycled PET/HDPE materials, bales, flakes and pellets for industrial & manufacturing purposes.",
   },
   {
     icon: <Building2 size={32} className="text-green-600" />,
     title: "Sustainable Solutions",
     description:
-      "Branded recycling programs and impact reporting for businesses and communities.",
+      "Branded recycling, CSR programs and ESG impact reporting for businesses and communities.",
   },
 ];
 
@@ -81,7 +81,7 @@ export default function ProductsServices() {
         {/* CTA Button */}
         <div className="mt-12 text-center">
           <motion.a
-            href="#"
+            href="/partners/#inquiry"
             className="inline-block bg-green-600 text-white font-semibold px-8 py-4 rounded-lg shadow-md hover:scale-105 hover:bg-green-500 transition-all duration-300"
             whileHover={{ scale: 1.05 }}
           >
