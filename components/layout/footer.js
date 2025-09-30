@@ -65,7 +65,7 @@ export default function Footer() {
             />
           </div>
           <p className="mt-4 text-sm leading-relaxed text-black/80">
-            <span className="font-black text-green-600">EcoLyft</span> — Building Africa's Most Accessible Circular Economy Infrastructure.
+            <span className="font-black text-green-600">EcoLyft</span> — Building Africa&apos;s Most Accessible Circular Economy Infrastructure.
           </p>
           <div className="flex gap-4 mt-6">
             {socialLinks.map((social) => (
