@@ -112,7 +112,7 @@ export default function Services() {
               <Link
                 href={service.cta.href}
                 className="mt-auto inline-block bg-green-600 text-white font-semibold px-6 py-3 rounded-lg shadow-md hover:bg-green-500 transition-all duration-300 text-center"
-                legacyBehavior>
+              >
                 {service.cta.text}
               </Link>
             </motion.div>

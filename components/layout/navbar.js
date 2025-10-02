@@ -35,7 +35,7 @@ export default function Header() {
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 lg:px-8 relative">
         {/* Logo */}
-        <Link href="/" className="flex-shrink-0" legacyBehavior>
+        <Link href="/" className="flex-shrink-0">
           <Image
             src="/images/logo.png"
             alt="Ecolyft Logo"
@@ -50,17 +50,15 @@ export default function Header() {
           {NAV_ITEMS.map((item) => {
             const isActive = pathname === item.href;
             return (
-              <Link
-                key={item.name}
-                href={item.href}
-                className={`transition-colors duration-300 ${
-                  isActive
-                    ? "text-green-700 font-semibold"
-                    : "text-gray-700 hover:text-green-500"
-                }`}
-                legacyBehavior>
-                {item.name}
-              </Link>
+            <Link
+              key={item.name}
+              href={item.href}
+              className={`transition-colors duration-300 ${
+                isActive ? "text-green-600" : "text-gray-700 hover:text-green-600"
+              }`}
+            >
+              {item.name}
+            </Link>
             );
           })}
         </nav>
@@ -100,13 +98,12 @@ export default function Header() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  onClick={() => setMobileOpen(false)}
                   className={`transition-colors duration-300 ${
                     isActive
                       ? "text-green-700 font-semibold"
                       : "text-gray-700 hover:text-green-500"
                   }`}
-                  legacyBehavior>
+                >
                   {item.name}
                 </Link>
               );

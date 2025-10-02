@@ -68,16 +68,16 @@ export default function Footer() {
             <span className="font-black text-green-600">EcoLyft</span> — Building Africa&apos;s Most Accessible Circular Economy Infrastructure.
           </p>
           <div className="flex gap-4 mt-6">
-            {socialLinks.map((social) => (
-              <Link
-                key={social.label}
-                href={social.href}
-                aria-label={social.label}
-                className={hoverFocusClasses}
-                legacyBehavior>
-                {social.icon}
-              </Link>
-            ))}
+          {socialLinks.map((social) => (
+            <Link
+              key={social.label}
+              href={social.href}
+              aria-label={social.label}
+              className={hoverFocusClasses}
+            >
+              {social.icon}
+            </Link>
+          ))}
           </div>
         </motion.div>
 
@@ -93,7 +93,7 @@ export default function Footer() {
           <ul className="space-y-2 text-sm">
             {navLinks.map((link) => (
               <li key={link.label}>
-                <Link href={link.href} className={hoverFocusClasses} legacyBehavior>
+                <Link href={link.href} className={hoverFocusClasses}>
                   {link.label}
                 </Link>
               </li>
@@ -113,7 +113,7 @@ export default function Footer() {
           <ul className="space-y-2 text-sm">
             {ServicesLinks.map((link) => (
               <li key={link.label}>
-                <Link href={link.href} className={hoverFocusClasses} legacyBehavior>
+                <Link href={link.href} className={hoverFocusClasses}>
                   {link.label}
                 </Link>
               </li>

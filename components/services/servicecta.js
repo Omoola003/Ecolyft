@@ -38,16 +38,18 @@ export default function ServicesCTA() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="flex flex-col sm:flex-row justify-center gap-6"
         >
-          <Link href="#" legacyBehavior>
-            <a className="bg-green-600 text-white font-semibold px-8 py-4 rounded-lg shadow-md hover:bg-green-500 transition-all duration-300">
-              Request Supply
-            </a>
+          <Link
+            href="#"
+            className="bg-green-600 text-white font-semibold px-8 py-4 rounded-lg shadow-md hover:bg-green-500 transition-all duration-300"
+          >
+            Request Supply
           </Link>
 
-          <Link href="/partners" legacyBehavior>
-            <a className="bg-white text-green-600 border border-green-600 font-semibold px-8 py-4 rounded-lg shadow-md hover:bg-green-100 transition-all duration-300">
-              Partner With Us
-            </a>
+          <Link
+            href="/partners"
+            className="bg-white text-green-600 border border-green-600 font-semibold px-8 py-4 rounded-lg shadow-md hover:bg-green-100 transition-all duration-300"
+          >
+            Partner With Us
           </Link>
         </motion.div>
       </div>

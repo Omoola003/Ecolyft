@@ -31,7 +31,7 @@ export default function ContactHero() {
           viewport={{ once: true }}
           variants={heroVariants}
         >
-          <Link href="/" legacyBehavior>
+          <Link href="/" >
             <a className="hover:underline">Home</a>
           </Link>{" "}
           / <span className="font-semibold text-gray-900">Contact</span>
