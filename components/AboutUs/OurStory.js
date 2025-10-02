@@ -17,9 +17,11 @@ export default function OurStory() {
   ];
 
   const rightGoals = [
-    "Expand to 50+ cities by 2026",
+    "Expand to 20+ cities by 2026",
     "Create 1000+ green jobs",
-    "Process 1M+ kg of plastic waste annually",
+    "Process 1M+ Tons of plastic waste annually",
+    "Achieve carbon neutrality by 2030",
+    "Empower communities through education and engagement",
   ];
 
   return (

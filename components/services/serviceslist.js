@@ -14,7 +14,7 @@ const services = [
       { icon: FaBox, label: "Minimum Pickup", value: "5kg per collection" },
       { icon: FaClock, label: "Frequency", value: "Weekly or on-demand" },
       { icon: FaMapMarkerAlt, label: "Service Areas", value: "Urban and suburban zones" },
-      { icon: FaMoneyBill, label: "Payment Rate", value: "₦500 per 1.20 per kg" },
+      { icon: FaMoneyBill, label: "Payment Rate", value: "1000 EcoKoin per 10kg" },
     ],
     cta: { text: "Request Pickup", href: "/request-pickup" },
     id: "pickup"
@@ -22,7 +22,7 @@ const services = [
   {
     title: "Sustainable Feedstock (Recycle Forward)",
     status: "Active",
-    description: "Premium quality recycled PET & HDPE materials for industrial manufacturing applications.",
+    description: "High grade recycled PET & HDPE materials for industrial & manufacturing purposes.",
     specifications: [
       { icon: FaRecycle, label: "Material Types", value: "Bales, Flakes & Pellets (Clear or Mixed)" },
       { icon: FaDashcube, label: "Purity Level", value: "99.5%+ certified" },
