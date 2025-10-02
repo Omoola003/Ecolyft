@@ -35,7 +35,7 @@ export default function Header() {
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 lg:px-8 relative">
         {/* Logo */}
-        <Link href="/" className="flex-shrink-0">
+        <Link href="/" className="flex-shrink-0" legacyBehavior>
           <Image
             src="/images/logo.png"
             alt="Ecolyft Logo"
@@ -58,7 +58,7 @@ export default function Header() {
                     ? "text-green-700 font-semibold"
                     : "text-gray-700 hover:text-green-500"
                 }`}
-              >
+                legacyBehavior>
                 {item.name}
               </Link>
             );
@@ -106,7 +106,7 @@ export default function Header() {
                       ? "text-green-700 font-semibold"
                       : "text-gray-700 hover:text-green-500"
                   }`}
-                >
+                  legacyBehavior>
                   {item.name}
                 </Link>
               );

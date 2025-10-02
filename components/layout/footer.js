@@ -74,7 +74,7 @@ export default function Footer() {
                 href={social.href}
                 aria-label={social.label}
                 className={hoverFocusClasses}
-              >
+                legacyBehavior>
                 {social.icon}
               </Link>
             ))}
@@ -93,7 +93,7 @@ export default function Footer() {
           <ul className="space-y-2 text-sm">
             {navLinks.map((link) => (
               <li key={link.label}>
-                <Link href={link.href} className={hoverFocusClasses}>
+                <Link href={link.href} className={hoverFocusClasses} legacyBehavior>
                   {link.label}
                 </Link>
               </li>
@@ -113,7 +113,7 @@ export default function Footer() {
           <ul className="space-y-2 text-sm">
             {ServicesLinks.map((link) => (
               <li key={link.label}>
-                <Link href={link.href} className={hoverFocusClasses}>
+                <Link href={link.href} className={hoverFocusClasses} legacyBehavior>
                   {link.label}
                 </Link>
               </li>
@@ -153,7 +153,6 @@ export default function Footer() {
           </ul>
         </motion.div>
       </div>
-
       {/* Bottom Section */}
       <div className="border-t border-black/20 py-4 text-center text-xs sm:text-sm text-black/80">
         © {new Date().getFullYear()} EcoLyft Cycler Technology. All rights reserved. Developed by{" "}
