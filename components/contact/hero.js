@@ -31,9 +31,9 @@ export default function ContactHero() {
           viewport={{ once: true }}
           variants={heroVariants}
         >
-          <Link href="/" >
-            <a className="hover:underline">Home</a>
-          </Link>{" "}
+          <Link href="/" className="hover:underline">
+           Home          
+           </Link>{" "}
           / <span className="font-semibold text-gray-900">Contact</span>
         </motion.div>
 

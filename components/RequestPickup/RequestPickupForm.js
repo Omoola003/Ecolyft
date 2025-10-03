@@ -1,9 +1,55 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { MessageCircle, Phone, Clock } from "lucide-react";
 
 export default function RequestPickupSection() {
+    const [formData, setFormData] = useState({
+    name: "",
+    address: "",
+    wasteType: "",
+    quantity: "",
+    date: "",
+    time: "",
+  });
+
+  const [status, setStatus] = useState(null);
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus("loading");
+
+    try {
+      const res = await fetch("/api/request-pickup", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      if (res.ok) {
+        setStatus("success");
+        setFormData({
+          name: "",
+          address: "",
+          wasteType: "",
+          quantity: "",
+          date: "",
+          time: "",
+        });
+      } else {
+        setStatus("error");
+      }
+    } catch (err) {
+      console.error(err);
+      setStatus("error");
+    }
+  };
+
   return (
     <section className="py-16 sm:py-20 bg-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -74,6 +120,7 @@ export default function RequestPickupSection() {
 
           {/* Right Column - Compact Form */}
           <motion.form
+            onSubmit={handleSubmit}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -84,102 +131,82 @@ export default function RequestPickupSection() {
               <h2 className="text-2xl font-bold text-[#2E8B57] mb-3">
                 Request Waste Pickup
               </h2>
-              <p className="text-gray-700 mb-5 text-sm">
-                Fill out the form below to schedule your collection.
-              </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {/* Full Name */}
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
-                    Full Name
-                  </label>
-                  <input
-                    type="text"
-                    placeholder="Your name"
-                    className="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-green-600 focus:outline-none"
-                    required
-                  />
-                </div>
-
-                {/* Pickup Address */}
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
-                    Address
-                  </label>
-                  <input
-                    type="text"
-                    placeholder="Pickup address"
-                    className="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-green-600 focus:outline-none"
-                    required
-                  />
-                </div>
-
-                {/* Waste Type */}
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
-                    Waste Type
-                  </label>
-                  <select
-                    className="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-green-600 focus:outline-none"
-                    required
-                  >
-                    <option value="">Select</option>
-                    <option>Plastics</option>
-                    <option>Papers</option>
-                    <option>Glass</option>
-                    <option>Metals</option>
-                    <option>E-waste</option>
-                    <option>Others</option>
-                  </select>
-                </div>
-
-                {/* Quantity */}
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
-                    Quantity (e.g., 5 kg, 2 bags)
-                  </label>
-                  <input
-                    type="text"
-                    placeholder="e.g., 5kg, 2 bags"
-                    className="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-green-600 focus:outline-none"
-                    required
-                  />
-                </div>
-
-                {/* Date */}
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
-                    Date
-                  </label>
-                  <input
-                    type="date"
-                    className="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-green-600 focus:outline-none"
-                    required
-                  />
-                </div>
-
-                {/* Time */}
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
-                    Time
-                  </label>
-                  <input
-                    type="time"
-                    className="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-green-600 focus:outline-none"
-                    required
-                  />
-                </div>
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Your name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                  className="w-full border border-gray-300 rounded-lg p-3"
+                />
+                <input
+                  type="text"
+                  name="address"
+                  placeholder="Pickup address"
+                  value={formData.address}
+                  onChange={handleChange}
+                  required
+                  className="w-full border border-gray-300 rounded-lg p-3"
+                />
+                <select
+                  name="wasteType"
+                  value={formData.wasteType}
+                  onChange={handleChange}
+                  required
+                  className="w-full border border-gray-300 rounded-lg p-3"
+                >
+                  <option value="">Select Waste Type</option>
+                  <option>Plastics</option>
+                  <option>Papers</option>
+                  <option>Glass</option>
+                  <option>Metals</option>
+                  <option>E-waste</option>
+                  <option>Others</option>
+                </select>
+                <input
+                  type="text"
+                  name="quantity"
+                  placeholder="Quantity e.g. 5kg, 2 bags"
+                  value={formData.quantity}
+                  onChange={handleChange}
+                  required
+                  className="w-full border border-gray-300 rounded-lg p-3"
+                />
+                <input
+                  type="date"
+                  name="date"
+                  value={formData.date}
+                  onChange={handleChange}
+                  required
+                  className="w-full border border-gray-300 rounded-lg p-3"
+                />
+                <input
+                  type="time"
+                  name="time"
+                  value={formData.time}
+                  onChange={handleChange}
+                  required
+                  className="w-full border border-gray-300 rounded-lg p-3"
+                />
               </div>
             </div>
 
-            {/* Submit Button */}
             <button
               type="submit"
-              className="w-full mt-6 bg-green-600 text-white font-semibold py-3 rounded-lg shadow-md hover:bg-green-500 transition-all duration-300"
+              className="w-full mt-6 bg-green-600 text-white py-3 rounded-lg"
             >
-              Submit Request
+              {status === "loading" ? "Submitting..." : "Submit Request"}
             </button>
+
+            {status === "success" && (
+              <p className="text-green-600 mt-3">Request submitted successfully!</p>
+            )}
+            {status === "error" && (
+              <p className="text-red-600 mt-3">Something went wrong. Try again.</p>
+            )}
           </motion.form>
         </div>
       </div>

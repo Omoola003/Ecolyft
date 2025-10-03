@@ -18,7 +18,7 @@ const contactCards = [
     detail: "+234 (807) 111-6365",
     actionText: "Call Now",
     href: "tel:+2348071116365",
-    note: "Call us during business hours",
+    note: "Give us a call us during business hours",
   },
   {
     title: "Office",

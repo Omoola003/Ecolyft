@@ -14,7 +14,7 @@ const services = [
       { icon: FaBox, label: "Minimum Pickup", value: "5kg per collection" },
       { icon: FaClock, label: "Frequency", value: "Weekly or on-demand" },
       { icon: FaMapMarkerAlt, label: "Service Areas", value: "Urban and suburban zones" },
-      { icon: FaMoneyBill, label: "Payment Rate", value: "1000 EcoKoin per 10kg" },
+      { icon: FaMoneyBill, label: "Payment Rate", value: "10kg = 1500 EcoKoins = ₦1,500" },
     ],
     cta: { text: "Request Pickup", href: "/request-pickup" },
     id: "pickup"
