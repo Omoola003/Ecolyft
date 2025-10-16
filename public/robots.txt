@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://ecolyft.vercel.app
+
+# Sitemaps
+Sitemap: https://ecolyft.vercel.app/sitemap.xml
