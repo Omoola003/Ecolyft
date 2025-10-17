@@ -5,9 +5,11 @@ import { motion } from "framer-motion";
 import { MessageCircle, Phone, Clock } from "lucide-react";
 
 export default function RequestPickupSection() {
-    const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState({
     name: "",
     address: "",
+    phone: "",
+    email: "",
     wasteType: "",
     quantity: "",
     date: "",
@@ -36,6 +38,8 @@ export default function RequestPickupSection() {
         setFormData({
           name: "",
           address: "",
+          phone: "",
+          email: "",
           wasteType: "",
           quantity: "",
           date: "",
@@ -54,7 +58,7 @@ export default function RequestPickupSection() {
     <section className="py-16 sm:py-20 bg-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
-          {/* Left Column - Quick Conversion */}
+          {/* Left Column */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -118,7 +122,7 @@ export default function RequestPickupSection() {
             </div>
           </motion.div>
 
-          {/* Right Column - Compact Form */}
+          {/* Right Column - Form */}
           <motion.form
             onSubmit={handleSubmit}
             initial={{ opacity: 0, y: 20 }}
@@ -147,6 +151,24 @@ export default function RequestPickupSection() {
                   name="address"
                   placeholder="Pickup address"
                   value={formData.address}
+                  onChange={handleChange}
+                  required
+                  className="w-full border border-gray-300 rounded-lg p-3"
+                />
+                <input
+                  type="tel"
+                  name="phone"
+                  placeholder="Phone Number"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  required
+                  className="w-full border border-gray-300 rounded-lg p-3"
+                />
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Email Address"
+                  value={formData.email}
                   onChange={handleChange}
                   required
                   className="w-full border border-gray-300 rounded-lg p-3"
@@ -202,10 +224,14 @@ export default function RequestPickupSection() {
             </button>
 
             {status === "success" && (
-              <p className="text-green-600 mt-3">Request submitted successfully!</p>
+              <p className="text-green-600 mt-3">
+                Request submitted successfully!
+              </p>
             )}
             {status === "error" && (
-              <p className="text-red-600 mt-3">Something went wrong. Try again.</p>
+              <p className="text-red-600 mt-3">
+                Something went wrong. Try again.
+              </p>
             )}
           </motion.form>
         </div>

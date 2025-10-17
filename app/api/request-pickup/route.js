@@ -1,30 +1,27 @@
-// app/api/request-pickup/route.js
 import { NextResponse } from "next/server";
 import fetch from "node-fetch";
 import nodemailer from "nodemailer";
 
 export async function POST(req) {
   const controller = new AbortController();
-  const timeout = setTimeout(() => controller.abort(), 10000); // 10s timeout
+  const timeout = setTimeout(() => controller.abort(), 10000);
 
   try {
     const body = await req.json();
-    let { name, address, wasteType, quantity, date, time, email } = body;
+    let { name, address, phone, email, wasteType, quantity, date, time } = body;
 
-    // 🧹 Trim + validate
+    // Basic sanitization
     name = name?.trim();
     address = address?.trim();
+    phone = phone?.trim();
+    email = email?.trim();
     wasteType = wasteType?.trim();
     quantity = quantity?.trim();
     date = date?.trim();
     time = time?.trim();
-    email = email?.trim();
 
-    if (!name || !address || !wasteType || !quantity || !date || !time) {
-      return NextResponse.json(
-        { error: "Missing required fields" },
-        { status: 400 }
-      );
+    if (!name || !address || !phone || !email || !wasteType || !quantity || !date || !time) {
+      return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
     }
 
     const sheetdbUrl = `${process.env.SHEETDB_URL}?sheet=RequestPickup`;
@@ -32,7 +29,6 @@ export async function POST(req) {
     const adminPhone = process.env.ADMIN_WHATSAPP;
     const adminEmail = process.env.ADMIN_EMAIL;
 
-    // ✉️ Email setup (Zoho)
     const transporter = nodemailer.createTransport({
       host: "smtp.zoho.com",
       port: 465,
@@ -43,9 +39,8 @@ export async function POST(req) {
       },
     });
 
-    // ⚙️ Parallelized + fault-tolerant
     const tasks = [
-      // 1️⃣ Save to SheetDB
+      // Save to SheetDB
       (async () => {
         try {
           await fetch(sheetdbUrl, {
@@ -59,7 +54,7 @@ export async function POST(req) {
         }
       })(),
 
-      // 2️⃣ WhatsApp admin alert
+      // WhatsApp notification
       (async () => {
         try {
           await fetch("https://api.sendchamp.com/v1/whatsapp/send", {
@@ -70,7 +65,7 @@ export async function POST(req) {
             },
             body: JSON.stringify({
               to: adminPhone,
-              message: `🚛 *New Pickup Request*\n\nName: ${name}\nAddress: ${address}\nWaste Type: ${wasteType}\nQuantity: ${quantity}\nPickup Date: ${date}\nPickup Time: ${time}`,
+              message: `🚛 *New Pickup Request*\n\nName: ${name}\nPhone: ${phone}\nAddress: ${address}\nWaste Type: ${wasteType}\nQuantity: ${quantity}\nPickup Date: ${date}\nPickup Time: ${time}`,
             }),
             signal: controller.signal,
           });
@@ -79,31 +74,29 @@ export async function POST(req) {
         }
       })(),
 
-      // 3️⃣ Admin email
+      // Admin email
       (async () => {
         try {
           await transporter.sendMail({
             from: process.env.ZOHO_SMTP_USER,
             to: adminEmail,
             subject: "New Pickup Request",
-            text: `You have a new pickup request:\n\nName: ${name}\nAddress: ${address}\nWaste Type: ${wasteType}\nQuantity: ${quantity}\nPickup Date: ${date}\nPickup Time: ${time}`,
+            text: `You have a new pickup request:\n\nName: ${name}\nPhone: ${phone}\nAddress: ${address}\nWaste Type: ${wasteType}\nQuantity: ${quantity}\nPickup Date: ${date}\nPickup Time: ${time}`,
           });
         } catch (err) {
           console.warn("Admin email failed:", err.message);
         }
       })(),
 
-      // 4️⃣ User confirmation email
+      // User confirmation
       (async () => {
         try {
-          if (email) {
-            await transporter.sendMail({
-              from: process.env.ZOHO_SMTP_USER,
-              to: email,
-              subject: "Pickup Request Received",
-              text: `Hi ${name},\n\nThank you for submitting your pickup request. Here are your details:\nAddress: ${address}\nWaste Type: ${wasteType}\nQuantity: ${quantity}\nPickup Date: ${date}\nPickup Time: ${time}\n\nOur team will contact you shortly.\n\nBest regards,\nEcoLyft Team`,
-            });
-          }
+          await transporter.sendMail({
+            from: process.env.ZOHO_SMTP_USER,
+            to: email,
+            subject: "Pickup Request Received",
+            text: `Hi ${name},\n\nThank you for submitting your pickup request.\n\nHere are your details:\nAddress: ${address}\nWaste Type: ${wasteType}\nQuantity: ${quantity}\nPickup Date: ${date}\nPickup Time: ${time}\n\nOur team will contact you shortly.\n\nBest regards,\nEcoLyft Team`,
+          });
         } catch (err) {
           console.warn("Confirmation email failed:", err.message);
         }
@@ -124,5 +117,7 @@ export async function POST(req) {
       { error: "Failed to process pickup request" },
       { status: 500 }
     );
+  } finally {
+    clearTimeout(timeout);
   }
 }
