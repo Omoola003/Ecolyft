@@ -7,40 +7,40 @@ import TrustedBy from "@/components/Homepage/industry";
 import Services from "@/components/Homepage/services";
 
 export const metadata = {
-  title: "Ecolyft | Sustainable Business Loans & Financial Growth Solutions",
+  title: "EcoLyft | Turning Plastic Waste into Value in Nigeria",
   description:
-    "Ecolyft helps individuals and businesses access sustainable financial support through fast, transparent, and impactful loans that drive real growth.",
+    "EcoLyft helps households and businesses convert everyday plastic waste into cash and high-quality industrial feed-stocks — building Nigeria’s circular economy infrastructure.",
   keywords: [
-    "business loans Nigeria",
-    "personal loans",
-    "green financing",
-    "SME growth funding",
-    "sustainable finance platform",
+    "EcoLyft Nigeria",
+    "plastic recycling Nigeria",
+    "circular economy Nigeria",
+    "waste to resource Nigeria",
+    "industrial feedstock recycling"
   ],
   openGraph: {
-    title: "Ecolyft | Empowering Financial Growth for Businesses & Individuals",
+    title: "EcoLyft | Waste-to-Resource & Circular Economy Solutions",
     description:
-      "Access business and personal loans designed for sustainable impact. Join thousands growing with Ecolyft.",
+      "From household pickups to industrial feedstocks — EcoLyft empowers communities and manufacturers to build a sustainable future.",
     url: "https://ecolyft.vercel.app",
-    siteName: "Ecolyft",
+    siteName: "EcoLyft",
     images: [
       {
         url: "https://ecolyft.vercel.app/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Ecolyft – Empowering Financial Growth",
-      },
+        alt: "EcoLyft – Turn your plastic waste into value"
+      }
     ],
     locale: "en_NG",
-    type: "website",
+    type: "website"
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ecolyft | Sustainable Business & Personal Loans",
+    title: "EcoLyft | Plastic Waste into Value",
     description:
-      "Empowering Africa’s entrepreneurs through accessible, transparent, and sustainable finance.",
-    images: ["https://ecolyft.vercel.app/og-image.jpg"],
-  },
+      "Households. Businesses. Industry. Join Nigeria’s circular economy with EcoLyft’s waste-to-resource platform.",
+    images: ["https://ecolyft.vercel.app/og-image.jpg"]
+  }
 };
 
 export default function Home() {
