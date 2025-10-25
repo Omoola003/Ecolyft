@@ -21,11 +21,11 @@ export const metadata = {
     title: "EcoLyft | Waste-to-Resource & Circular Economy Solutions",
     description:
       "From household pickups to industrial feedstocks — EcoLyft empowers communities and manufacturers to build a sustainable future.",
-    url: "https://ecolyft.vercel.app",
+    url: "https://ecolyft.com",
     siteName: "EcoLyft",
     images: [
       {
-        url: "https://ecolyft.vercel.app/og-image.jpg",
+        url: "https://ecolyft.com/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "EcoLyft – Turn your plastic waste into value"
@@ -39,7 +39,7 @@ export const metadata = {
     title: "EcoLyft | Plastic Waste into Value",
     description:
       "Households. Businesses. Industry. Join Nigeria’s circular economy with EcoLyft’s waste-to-resource platform.",
-    images: ["https://ecolyft.vercel.app/og-image.jpg"]
+    images: ["https://ecolyft.com/og-image.jpg"]
   }
 };
 
@@ -48,8 +48,8 @@ export default function Home() {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: "Ecolyft",
-    url: "https://ecolyft.vercel.app",
-    logo: "https://ecolyft.vercel.app/logo.png",
+    url: "https://ecolyft.com",
+    logo: "https://ecolyft.com/logo.png",
     sameAs: [
       "https://twitter.com/ecolyft",
       "https://linkedin.com/company/ecolyft",

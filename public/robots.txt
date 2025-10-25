@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://ecolyft.vercel.app
+Host: https://ecolyft.com
 
 # Sitemaps
-Sitemap: https://ecolyft.vercel.app/sitemap.xml
+Sitemap: https://ecolyft.com/sitemap.xml

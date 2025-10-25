@@ -25,11 +25,11 @@ export const metadata = {
     title: "About EcoLyft | Building Africa’s Circular Economy",
     description:
       "EcoLyft is redefining waste management in Africa — turning plastic waste into value for people, businesses, and the planet.",
-    url: "https://ecolyft.vercel.app/about-us",
+    url: "https://ecolyft.com/about-us",
     siteName: "EcoLyft",
     images: [
       {
-        url: "https://ecolyft.vercel.app/images/What-we-do.jpg",
+        url: "https://ecolyft.com/images/What-we-do.jpg",
         width: 1200,
         height: 630,
         alt: "EcoLyft Team at work",
@@ -43,10 +43,10 @@ export const metadata = {
     title: "About EcoLyft | Building Africa’s Circular Economy",
     description:
       "Learn about EcoLyft’s mission to make recycling accessible and profitable across Africa.",
-    images: ["https://ecolyft.vercel.app/images/Us-in-action.jpg"],
+    images: ["https://ecolyft.com/images/Us-in-action.jpg"],
   },
   alternates: {
-    canonical: "https://ecolyft.vercel.app/about-us",
+    canonical: "https://ecolyft.com/about-us",
   },
 };
 
@@ -56,8 +56,8 @@ export default function AboutUs() {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: "EcoLyft",
-    url: "https://ecolyft.vercel.app",
-    logo: "https://ecolyft.vercel.app/images/logo.png",
+    url: "https://ecolyft.com",
+    logo: "https://ecolyft.com/images/logo.png",
     sameAs: [
       "https://linkedin.com/company/ecolyft",
       "https://instagram.com/ecolyft",
