@@ -23,11 +23,11 @@ export const metadata = {
     title: "EcoLyft Services | Circular Economy Solutions for Homes & Industry",
     description:
       "EcoLyft connects households and industries in the circular economy — from plastic pickup to premium recycled materials and corporate recycling programs.",
-    url: "https://ecolyft.com/services",
+    url: "https://www.ecolyft.com/services",
     siteName: "EcoLyft",
     images: [
       {
-        url: "https://ecolyft.com/images/og-image.jpg",
+        url: "https://www.ecolyft.com/images/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "EcoLyft Services - Circular Economy Solutions",
@@ -41,10 +41,10 @@ export const metadata = {
     title: "EcoLyft Services | Circular Economy Solutions for Homes & Industry",
     description:
       "Discover EcoLyft’s innovative recycling and sustainability services for homes, industries, and corporate partners.",
-    images: ["https://ecolyft.com/images/og-image.jpg"],
+    images: ["https://www.ecolyft.com/images/og-image.jpg"],
   },
   alternates: {
-    canonical: "https://ecolyft.com/services",
+    canonical: "https://www.ecolyft.com/services",
   },
 };
 
@@ -57,8 +57,8 @@ export default function Services() {
     provider: {
       "@type": "Organization",
       name: "EcoLyft",
-      url: "https://ecolyft.com",
-      logo: "https://ecolyft.com/images/logo.png",
+      url: "https://www.ecolyft.com",
+      logo: "https://www.ecolyft.com/images/logo.png",
       sameAs: [
         "https://linkedin.com/company/ecolyft",
         "https://instagram.com/ecolyft",
@@ -127,7 +127,7 @@ export default function Services() {
         },
       ],
     },
-    termsOfService: "https://ecolyft.com/terms",
+    termsOfService: "https://www.ecolyft.com/terms",
   };
 
   return (

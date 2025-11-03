@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://ecolyft.com
+Host: https://www.ecolyft.com
 
 # Sitemaps
-Sitemap: https://ecolyft.com/sitemap.xml
+Sitemap: https://www.ecolyft.com/sitemap.xml

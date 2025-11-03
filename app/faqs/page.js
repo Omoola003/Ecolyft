@@ -21,11 +21,11 @@ export const metadata = {
     title: "EcoLyft FAQ | Recycling Services, Partnerships & Operations",
     description:
       "Get answers to frequently asked questions about EcoLyft’s recycling services, materials, and corporate sustainability programs.",
-    url: "https://ecolyft.com/faq",
+    url: "https://www.ecolyft.com/faq",
     siteName: "EcoLyft",
     images: [
       {
-        url: "https://ecolyft.com/images/og-image.jpg",
+        url: "https://www.ecolyft.com/images/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "EcoLyft FAQ Page",
@@ -39,10 +39,10 @@ export const metadata = {
     title: "EcoLyft FAQ | Recycling Services, Partnerships & Operations",
     description:
       "Answers to top EcoLyft questions — from pickups and payments to sustainable partnerships.",
-    images: ["https://ecolyft.com/images/og-image.jpg"],
+    images: ["https://www.ecolyft.com/images/og-image.jpg"],
   },
   alternates: {
-    canonical: "https://ecolyft.com/faq",
+    canonical: "https://www.ecolyft.com/faq",
   },
 };
 

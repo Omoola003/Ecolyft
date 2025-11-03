@@ -19,17 +19,17 @@ export const metadata = {
     "ESG initiatives",
   ],
   alternates: {
-    canonical: "https://ecolyft.com/partners",
+    canonical: "https://www.ecolyft.com/partners",
   },
   openGraph: {
     title: "Partner With Ecolyft | Drive Sustainable Impact Together",
     description:
       "Join Ecolyft’s partnership network to advance recycling, waste management innovation, and community empowerment across Nigeria.",
-    url: "https://ecolyft.com/partners",
+    url: "https://www.ecolyft.com/partners",
     siteName: "Ecolyft",
     images: [
       {
-        url: "https://ecolyft.com/og-image.jpg",
+        url: "https://www.ecolyft.com/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "Ecolyft Partnership Program",
@@ -43,7 +43,7 @@ export const metadata = {
     title: "Partner With Ecolyft | Build a Greener Future Together",
     description:
       "Collaborate with Ecolyft to drive sustainability, innovation, and measurable environmental impact.",
-    images: ["https://ecolyft.com/og-image.jpg"],
+    images: ["https://www.ecolyft.com/og-image.jpg"],
     creator: "@ecolyft",
   },
 };
@@ -53,8 +53,8 @@ export default function Partners() {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: "Ecolyft",
-    url: "https://ecolyft.com/partners",
-    logo: "https://ecolyft.com/logo.png",
+    url: "https://www.ecolyft.com/partners",
+    logo: "https://www.ecolyft.com/logo.png",
     description:
       "Ecolyft partners with organizations and communities to advance recycling innovation and sustainable impact across Nigeria.",
     contactPoint: {
@@ -91,7 +91,7 @@ export default function Partners() {
     },
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": "https://ecolyft.com/partners",
+      "@id": "https://www.ecolyft.com/partners",
     },
   };
 

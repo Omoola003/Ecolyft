@@ -24,11 +24,11 @@ export const metadata = {
     title: "Contact EcoLyft | Get in Touch for Partnerships & Recycling Solutions",
     description:
       "Have questions or want to collaborate? Contact EcoLyft for household pickups, industrial feedstock, or CSR partnership programs.",
-    url: "https://ecolyft.com/contact",
+    url: "https://www.ecolyft.com/contact",
     siteName: "EcoLyft",
     images: [
       {
-        url: "https://ecolyft.com/images/og-image.jpg",
+        url: "https://www.ecolyft.com/images/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "EcoLyft Contact Page",
@@ -42,10 +42,10 @@ export const metadata = {
     title: "Contact EcoLyft | Get in Touch for Partnerships & Recycling Solutions",
     description:
       "Contact EcoLyft for recycling solutions, partnerships, and sustainability consulting.",
-    images: ["https://ecolyft.com/images/og-image.jpg"],
+    images: ["https://www.ecolyft.com/images/og-image.jpg"],
   },
   alternates: {
-    canonical: "https://ecolyft.com/contact",
+    canonical: "https://www.ecolyft.com/contact",
   },
 };
 
@@ -55,8 +55,8 @@ export default function Contact() {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     name: "EcoLyft",
-    image: "https://ecolyft.com/images/logo.png",
-    url: "https://ecolyft.com",
+    image: "https://www.ecolyft.com/images/logo.png",
+    url: "https://www.ecolyft.com",
     telephone: "+2348071116365",
     email: "info@ecolyft.com",
     address: {
@@ -90,7 +90,7 @@ export default function Contact() {
       "@type": "CommunicateAction",
       target: {
         "@type": "EntryPoint",
-        urlTemplate: "https://ecolyft.com/contact",
+        urlTemplate: "https://www.ecolyft.com/contact",
         actionPlatform: [
           "https://www.ecolyft.com",
           "https://m.ecolyft.com",

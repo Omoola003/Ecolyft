@@ -31,11 +31,11 @@ export const metadata = {
     title: "EcoLyft Cycler Technology",
     description:
       "Transforming waste into economic opportunity through innovative recycling technology and circular economy solutions.",
-    url: "https://ecolyft.com",
+    url: "https://www.ecolyft.com",
     siteName: "EcoLyft",
     images: [
       {
-        url: "https://ecolyft.com/og-image.jpg",
+        url: "https://www.ecolyft.com/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "EcoLyft circular technology banner",
@@ -49,7 +49,7 @@ export const metadata = {
     title: "EcoLyft Cycler Technology",
     description:
       "Transforming waste into economic opportunity across Nigeria.",
-    images: ["https://ecolyft.com/og-image.jpg"],
+    images: ["https://www.ecolyft.com/og-image.jpg"],
     creator: "@EcoLyftNG",
   },
 };
@@ -103,8 +103,8 @@ export default function RootLayout({ children }) {
               "@context": "https://schema.org",
               "@type": "Organization",
               name: "EcoLyft Cycler Technology",
-              url: "https://ecolyft.com",
-              logo: "https://ecolyft.com/logo.png",
+              url: "https://www.ecolyft.com",
+              logo: "https://www.ecolyft.com/logo.png",
               description:
                 "EcoLyft transforms waste into opportunity, driving circular economy growth and sustainable waste management solutions across Nigeria.",
               sameAs: [

@@ -16,17 +16,17 @@ export const metadata = {
     "Ecolyft success stories",
   ],
   alternates: {
-    canonical: "https://ecolyft.com/impact",
+    canonical: "https://www.ecolyft.com/impact",
   },
   openGraph: {
     title: "Ecolyft Community Impact | Real Change, Real Results",
     description:
       "Discover Ecolyft’s measurable impact — from tons of waste recycled to communities empowered through our sustainability initiatives.",
-    url: "https://ecolyft.com/impact",
+    url: "https://www.ecolyft.com/impact",
     siteName: "Ecolyft",
     images: [
       {
-        url: "https://ecolyft.com/og-image.jpg",
+        url: "https://www.ecolyft.com/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "Ecolyft Impact – Recycling for a Cleaner Future",
@@ -40,7 +40,7 @@ export const metadata = {
     title: "Ecolyft Community Impact | Creating a Cleaner Future",
     description:
       "From waste-to-wealth programs to school recycling challenges, Ecolyft is driving community transformation across Nigeria.",
-    images: ["https://ecolyft.com/og-image.jpg"],
+    images: ["https://www.ecolyft.com/og-image.jpg"],
     creator: "@ecolyft",
   },
 };
@@ -50,8 +50,8 @@ export default function Impact() {
     "@context": "https://schema.org",
     "@type": "NGO",
     name: "Ecolyft",
-    url: "https://ecolyft.com/impact",
-    logo: "https://ecolyft.com/logo.png",
+    url: "https://www.ecolyft.com/impact",
+    logo: "https://www.ecolyft.com/logo.png",
     description:
       "Ecolyft drives sustainability through recycling, community empowerment, and waste-to-wealth programs across Nigeria.",
     areaServed: {
@@ -90,7 +90,7 @@ export default function Impact() {
     ],
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": "https://ecolyft.com/impact",
+      "@id": "https://www.ecolyft.com/impact",
     },
   };
 
